@@ -1,11 +1,9 @@
 package com.intellibps.bib.security;
 
 import com.google.appengine.api.datastore.Key;
+import com.intellibps.bib.customer.ContactInfo;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,6 +30,14 @@ public class User
     private String password;
     @Persistent
     private Set<com.google.appengine.api.datastore.Key> roles;
+    @Persistent
+    private com.google.appengine.api.datastore.Key company;
+    @NotPersistent
+    private boolean isDirty = false;
+    @NotPersistent
+    private boolean isNew = false;
+    @NotPersistent
+    private boolean isDeleted = false;
 
     public User()
     {
@@ -81,6 +87,65 @@ public class User
     public Set<com.google.appengine.api.datastore.Key> roles()
     {
         return roles;
+    }
+
+
+    public boolean isDirty()
+    {
+        return isDirty;
+    }
+
+    public void isDirty(boolean dirty)
+    {
+        isDirty = dirty;
+    }
+
+    public boolean isNew()
+    {
+        return isNew;
+    }
+
+    public void isNew(boolean aNew)
+    {
+        isNew = aNew;
+    }
+
+    public boolean isDeleted()
+    {
+        return isDeleted;
+    }
+
+    public void isDeleted(boolean deleted)
+    {
+        isDeleted = deleted;
+    }
+
+    public Key company()
+    {
+        return company;
+    }
+
+    public void company(Key company)
+    {
+        this.company = company;
+    }
+
+    public Key id()
+    {
+        return id;
+    }
+
+    public void id(Key id)
+    {
+        this.id = id;
+    }
+
+    public void copyFrom(User user)
+    {
+        this.firstname = user.firstname;
+        this.lastname = user.lastname;
+        this.email = user.email;
+
     }
 
 

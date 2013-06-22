@@ -41,7 +41,7 @@ public class SimpleDataService
     @Path("companies/{param}")
     public Response loadCompanies(@PathParam("param") String msg, @QueryParam("email") String email)
     {
-           String result = "";
+        String result = "";
 
         if (sessionManager.isLoggedIn(email))
         {
@@ -49,8 +49,7 @@ public class SimpleDataService
 
             Gson gson = new Gson();
             result = gson.toJson(companies);
-        }
-        else
+        } else
         {
             result = "Not logged in";
         }
@@ -67,12 +66,12 @@ public class SimpleDataService
 
         try
         {
-           companies = (List<Company>) query.execute();
-           Iterator<Company> companyIterator = companies.iterator();
+            companies = (List<Company>) query.execute();
+            Iterator<Company> companyIterator = companies.iterator();
             logger.info("Companies loaded");
 
             // mark the retrieved companies as not new
-            while(companyIterator.hasNext())
+            while (companyIterator.hasNext())
             {
                 Company company = companyIterator.next();
                 company.isNew(false);
@@ -81,9 +80,7 @@ public class SimpleDataService
             }
 
 
-        }
-
-        finally
+        } finally
         {
             persistenceManager.close();
         }
@@ -101,14 +98,16 @@ public class SimpleDataService
 
             PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
             List<Company> companies;
-            Type type = new TypeToken<List<Company>>(){}.getType();
+            Type type = new TypeToken<List<Company>>()
+            {
+            }.getType();
             Gson gson = new Gson();
 
             try
             {
-               logger.info("Received Companies: " + data);
+                logger.info("Received Companies: " + data);
 
-               companies = gson.fromJson(data, type);
+                companies = gson.fromJson(data, type);
                 logger.info("Parsed Companies: " + companies.size());
                 logger.info("Company Id:" + companies.get(0).id());
 
@@ -117,40 +116,34 @@ public class SimpleDataService
                 {
                     Company company = iterator.next();
 
-                   if
-                        (company.isNew())
-                {
-                    logger.info("Saving New Company");
-                    persistenceManager.makePersistent(company);
-                    logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
-                    company.isNew(false);
-                    company.isDirty(false);
-                }
-                   else if (company.isDeleted())
-                   {
-                       logger.info("Deleting Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
-                       Company psCompany = (Company)persistenceManager.getObjectById(Company.class, company.id().getId());
-                       persistenceManager.deletePersistent(psCompany);
+                    if
+                            (company.isNew())
+                    {
+                        logger.info("Saving New Company");
+                        persistenceManager.makePersistent(company);
+                        logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
 
-                   }
-                    else if (company.isDirty())
+                    } else if (company.isDeleted())
+                    {
+                        logger.info("Deleting Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
+                        Company psCompany = (Company) persistenceManager.getObjectById(Company.class, company.id().getId());
+                        persistenceManager.deletePersistent(psCompany);
+
+                    } else if (company.isDirty())
                     {
                         logger.info("Saving Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
-                    Company psCompany = (Company)persistenceManager.getObjectById(Company.class, company.id().getId());
+                        Company psCompany = (Company) persistenceManager.getObjectById(Company.class, company.id().getId());
                         logger.info("Updating Company - Kind: " + psCompany.id().getKind() + " Id: " + psCompany.id().getId() + " ContactInfo: " + psCompany.contactInfo().id().getId());
-                    psCompany.copyFrom(company);
-                    persistenceManager.makePersistent(psCompany);
-                        logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId()+ " ContactInfo: " + psCompany.contactInfo().id().getId());
-                    company.isNew(false);
-                    company.isDirty(false);
+                        psCompany.copyFrom(company);
+                        persistenceManager.makePersistent(psCompany);
+                        logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId() + " ContactInfo: " + psCompany.contactInfo().id().getId());
+
                     }
 
                 }
 
 
-            }
-
-            finally
+            } finally
             {
                 persistenceManager.close();
             }
@@ -158,12 +151,138 @@ public class SimpleDataService
             companies = loadCompanies();
             result = gson.toJson(companies);
 
-        }
-        else
+        } else
         {
             result = "Not logged in";
         }
 
+
+        return Response.status(201).entity(result).build();
+    }
+
+    @GET
+    @Path("users/{param}")
+    public Response loadUsers(@PathParam("param") String companyId, @QueryParam("email") String email)
+    {
+        String result = "";
+
+        if (sessionManager.isLoggedIn(email))
+        {
+            List<User> users = loadUsers(Long.parseLong(companyId));
+
+            Gson gson = new Gson();
+            result = gson.toJson(users);
+        } else
+        {
+            result = "Not logged in";
+        }
+
+        return Response.status(200).entity(result).build();
+
+    }
+
+    private List<User> loadUsers(long companyId)
+    {
+        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE company==:company");
+        List<User> users;
+        Company company;
+        logger.info("Loading users");
+
+        try
+        {
+            company = (Company) persistenceManager.getObjectById(Company.class, companyId);
+            users = (List<User>) query.execute(company.id());
+            Iterator<User> userIterator = users.iterator();
+            logger.info("Users loaded " + users.size());
+
+            // mark the retrieved companies as not new
+            while (userIterator.hasNext())
+            {
+                User user = userIterator.next();
+                user.isNew(false);
+                user.isDirty(false);
+
+            }
+
+
+        } finally
+        {
+            persistenceManager.close();
+        }
+
+        return users;
+    }
+
+    @PUT
+    @Path("users/{param}")
+    public Response saveUser(@PathParam("param") String companyId, @QueryParam("email") String email, String data)
+    {
+        String result = "";
+        if (sessionManager.isLoggedIn(email))
+        {
+
+            PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+            List<User> users;
+            Type type = new TypeToken<List<User>>()
+            {
+            }.getType();
+            Gson gson = new Gson();
+            Company company;
+
+            try
+            {
+                logger.info("Received Users: " + data);
+
+                users = gson.fromJson(data, type);
+                logger.info("Parsed Users: " + users.size());
+
+                Iterator<User> iterator = users.iterator();
+                while (iterator.hasNext())
+                {
+                    User user = iterator.next();
+
+                    if (user.isNew())
+                    {
+                        logger.info("Company Id: " + companyId);
+                        company = (Company) persistenceManager.getObjectById(Company.class, Long.parseLong(companyId));
+                        user.company(company.id());
+                        logger.info("Saving New User");
+                        persistenceManager.makePersistent(user);
+                        logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
+
+                    } else if (user.isDeleted())
+                    {
+                        logger.info("Deleting User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
+                        User psUser = (User) persistenceManager.getObjectById(User.class, user.id().getId());
+                        persistenceManager.deletePersistent(psUser);
+
+                    } else if (user.isDirty())
+                    {
+                        logger.info("Saving User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
+                        User psUser = (User) persistenceManager.getObjectById(User.class, user.id().getId());
+                        logger.info("Updating User - Kind: " + psUser.id().getKind() + " Id: " + psUser.id().getId());
+                        psUser.copyFrom(user);
+                        persistenceManager.makePersistent(psUser);
+                        logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
+
+                    }
+
+                }
+
+
+            } finally
+            {
+                persistenceManager.close();
+            }
+
+            users = loadUsers(Long.parseLong(companyId));
+            result = gson.toJson(users);
+
+        } else
+        {
+            result = "Not logged in";
+        }
 
 
         return Response.status(201).entity(result).build();

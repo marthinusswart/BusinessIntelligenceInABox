@@ -12,18 +12,27 @@ var controlPanelModule = angular
 controlPanelModule.controller("controlPanelController",
     function ($scope, $http)
     {
+        /***************************************
+         *                Variables
+         ****************************************/
         $scope.deleteCompanyDialogId = "#deleteCompanyDialog";
         $scope.confirmationDialogId = "#confirmationDialog";
         $scope.tabsId = "#tabs";
         $scope.deletedCompanies = [];
         $scope.users = [];
         $scope.roles = [];
+        $scope.companies = [];
         $scope.currentCompany;
         $scope.confirmationmessage = "Confirm?";
         $scope.confirmationtitle = "Confirm";
         $scope.canNavigateOnDirty = false;
         $scope.newSelectedTabIndex = 1;
+        $scope.company;
+        $scope.user;
 
+        /*****************************************
+         *          Functions
+         ***************************************/
         $scope.addCompany = function ()
         {
             var company = new Company();
@@ -37,6 +46,21 @@ controlPanelModule.controller("controlPanelController",
 
             $scope.company = company;
             $scope.companies.push($scope.company);
+        }
+
+        $scope.addUser = function()
+        {
+
+            var user = new User();
+            user.firstname = "New";
+            user.lastname = "New";
+            user.email = "email@email.com";
+            user.isNew = true;
+            user.isDirty = false;
+            user.isDeleted = false;
+
+            $scope.user = user;
+            $scope.users.push($scope.user);
         }
 
         $scope.deleteCompany = function ()
@@ -98,7 +122,9 @@ controlPanelModule.controller("controlPanelController",
                 }
             );
         }
-
+        /*************************************
+         *               REST Services
+         *************************************/
         $scope.loadCompanies = function ()
         {
             $http.get("/rest/data/companies/load?email=marthinus.swart@intellibps.com").success(
@@ -127,6 +153,44 @@ controlPanelModule.controller("controlPanelController",
                 {
                     $scope.companies = reply;
                     $scope.company = $scope.companies[0];
+                }
+            );
+        }
+
+        $scope.loadUsers = function (companyId)
+        {
+            $http.get("/rest/data/users/"+companyId+"?email=marthinus.swart@intellibps.com").success(
+                function (reply)
+                {
+                    $scope.users = reply;
+                    $scope.user = $scope.users[0];
+                }
+            );
+        }
+
+        $scope.saveSelectedCompanyUsers = function()
+        {
+            $scope.saveUsers($scope.company.id.id);
+        }
+
+        $scope.saveUsers = function (companyId)
+        {
+            /*
+            if ($scope.deletedCompanies.length > 0)
+            {
+                // add the deleted companies to the list
+                for (var i = 0; i < $scope.deletedCompanies.length; i++)
+                {
+                    $scope.companies.push($scope.deletedCompanies[i]);
+                    $scope.deletedCompanies = [];
+                }
+            }
+            */
+            $http.put("/rest/data/users/"+companyId+"?email=marthinus.swart@intellibps.com", $scope.users).success(
+                function (reply)
+                {
+                    $scope.users = reply;
+                    $scope.user = $scope.users[0];
                 }
             );
         }
@@ -175,7 +239,9 @@ controlPanelModule.controller("controlPanelController",
                     return false;
                 }
 
-                alert("loading users placeholder");
+                // Load all the users for this company
+                $scope.loadUsers($scope.company.id.id);
+
             }
             else if (ui.newPanel.attr("id") == "roleTab")
             {
@@ -206,9 +272,37 @@ controlPanelModule.controller("controlPanelController",
                     $scope.companies.isDirty = true;
                 }
             });
+
+            $scope.$watch("user.isDirty", function (oldValue, newValue)
+            {
+
+                if (oldValue == true)
+                {
+                    $scope.users.isDirty = true;
+                }
+            });
+            /*
+            $scope.$watch("user.firstname", function (oldValue, newValue)
+            {
+
+
+                    $scope.user.fullname = $scope.user.firstname + " " + $scope.user.lastname;
+
+            });
+
+            $scope.$watch("user.lastname", function (oldValue, newValue)
+            {
+
+
+                $scope.user.fullname = $scope.user.firstname + " " + $scope.user.lastname;
+
+            });
+            */
         }
 
-
+        /**************************************
+         *         Initialisation
+         ***************************************/
         $scope.loadCompanies();
         $scope.addDirtyWatchers();
 

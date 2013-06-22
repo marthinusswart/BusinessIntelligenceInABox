@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/controlpanel/css/default.css" type="text/css">
 
     <script type="text/javascript" src="/controlpanel/models/company.js"></script>
+    <script type="text/javascript" src="/controlpanel/models/user.js"></script>
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>
     <script type="text/javascript" src="controlpanel/directives/controlpanel-dialogs.js"></script>
     <script type="text/javascript" src="/controlpanel/controllers/controlpanel.js"></script>
@@ -33,13 +34,13 @@
             <li><a href="#roleTab">Role Management</a></li>
         </ul>
         <div id="companyTab">
-            <div id="toolbar" class="ui-widget-header ui-corner-all" style="position:absolute;left:10px;right:10px;">
-                <button id="addButton" class="toolbar-button" ng-click="addCompany()" style="margin-left: 5px;">Add</button>
-                <button id="deleteButton" class="toolbar-button" ng-click="deleteCompany()">Delete</button>
-                <button id="saveButton" class="toolbar-button" ng-click="saveCompanies()">Save</button>
+            <div id="company-toolbar" class="ui-widget-header ui-corner-all" style="position:absolute;left:10px;right:10px;">
+                <button id="addCompanyButton" class="toolbar-button" ng-click="addCompany()" style="margin-left: 5px;">Add</button>
+                <button id="deleteCompanyButton" class="toolbar-button" ng-click="deleteCompany()">Delete</button>
+                <button id="saveCompanyButton" class="toolbar-button" ng-click="saveCompanies()">Save</button>
                 Company is dirty = {{company.isDirty}} Companies is dirty = {{companies.isDirty}}
             </div>
-            <div id="listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 200px;">
+            <div id="company-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
                 <select id="company-list" ng-model="company"
                         ng-options="obj.name for obj in companies" size="10"
                         class="fill styled">
@@ -47,7 +48,7 @@
 
             </div>
             <div id="company-detail" class="main-content"
-                 style="position: absolute;top:100px;bottom:10px;left:220px;right:10px;">
+                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
                 <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
                     Company Name:
                     <div><input type="text" class="fill rounded-border" ng-model="company.name" ng-change="company.isDirty=true"></div>
@@ -81,16 +82,66 @@
             </div>
 
         </div>
-        <div id="userTab"></div>
+        <div id="userTab">
+            <div id="user-toolbar" class="ui-widget-header ui-corner-all" style="position:absolute;left:10px;right:10px;">
+                <button id="addUserButton" class="toolbar-button" ng-click="addUser()" style="margin-left: 5px;">Add</button>
+                <button id="deleteUserButton" class="toolbar-button" ng-click="deleteUser()">Delete</button>
+                <button id="saveUserButton" class="toolbar-button" ng-click="saveSelectedCompanyUsers()">Save</button>
+                User is dirty = {{user.isDirty}} Users is dirty = {{users.isDirty}}
+            </div>
+            <div id="user-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
+                <select id="user-list" ng-model="user"
+                        ng-options="obj.email for obj in users" size="10"
+                        class="fill styled">
+                </select>
+
+            </div>
+            <div id="user-detail" class="main-content"
+                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
+                <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
+                    Firstname:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.firstname" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Lastname:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.lastname" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Email:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.email" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Home Country:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.country" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Business Phone:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.businessPhoneNo" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Mobile Phone:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.mobilePhoneNo" ng-change="user.isDirty=true"></div>
+                    <p></p>
+                    Business Email:
+                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.businessEmail" ng-change="user.isDirty=true"></div>
+                </div>
+                <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+                    Physical Address:
+                    <div><textarea type="text" class="fill rounded-border" ng-model="user.contactInfo.physicalAddress"  ng-change="user.isDirty=true" style="height: 100px;"></textarea></div>
+                    <p></p>
+                    Postal Address:
+                    <div><textarea type="text" class="fill rounded-border" ng-model="user.contactInfo.postalAddress"  ng-change="user.isDirty=true" style="height: 100px;"></textarea></div>
+                </div>
+
+            </div>
+        </div>
         <div id="roleTab"></div>
     </div>
     <delete-company-dialog></delete-company-dialog>
     <confirmation-dialog></confirmation-dialog>
     <initialise comment="Initialise all the different controls that need the DOM to be available first">
 
-        <jq-button button-id="saveButton"></jq-button>
-        <jq-button button-id="deleteButton"></jq-button>
-        <jq-button button-id="addButton"></jq-button>
+        <jq-button button-id="saveCompanyButton"></jq-button>
+        <jq-button button-id="deleteCompanyButton"></jq-button>
+        <jq-button button-id="addCompanyButton"></jq-button>
+        <jq-button button-id="saveUserButton"></jq-button>
+        <jq-button button-id="deleteUserButton"></jq-button>
+        <jq-button button-id="addUserButton"></jq-button>
         <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
     </initialise>
 </div>
