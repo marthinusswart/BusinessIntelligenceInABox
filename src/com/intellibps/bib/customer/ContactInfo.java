@@ -1,5 +1,7 @@
 package com.intellibps.bib.customer;
 
+import com.google.appengine.api.datastore.Key;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -79,5 +81,27 @@ public class ContactInfo
         this.postalAddress = postalAddress;
     }
 
+    public Key id()
+    {
+        return id;
+    }
 
+    public void id(Key id)
+    {
+        this.id = id;
+    }
+
+    public void copyFrom(ContactInfo contactInfo)
+    {
+
+        if (contactInfo != null)
+        {
+        this.businessEmail = contactInfo.businessEmail;
+        this.businessPhoneNo = contactInfo.businessPhoneNo;
+        this.mobilePhoneNo = contactInfo.mobilePhoneNo;
+        this.physicalAddress = contactInfo.physicalAddress;
+            this.postalAddress = contactInfo.postalAddress;
+        }
+
+    }
 }

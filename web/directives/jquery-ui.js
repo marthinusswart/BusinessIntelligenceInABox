@@ -14,5 +14,43 @@ jqComponents.directive("jqButton", function ()
     }
 );
 
+jqComponents.directive("jqTabs", function ()
+    {
+        return {
+            restrict:'E',
+            scope:{
+                "beforeActivateCallback":"&"
+            } ,
+            link:function (scope, element, attrs)
+            {
+
+                var beforeActivateCallback = scope.beforeActivateCallback();
+
+                if (typeof beforeActivateCallback != "function")
+                {
+
+                    beforeActivateCallback = function(event,ui){return true;};
+
+                }
+
+
+
+                // make it a jQuery Tabs
+                $("#"+attrs.tabsId).tabs(
+                    {
+                       beforeActivate:beforeActivateCallback
+
+                    });
+
+
+            }
+        };
+    }
+);
+
+
+
+
+
 
 

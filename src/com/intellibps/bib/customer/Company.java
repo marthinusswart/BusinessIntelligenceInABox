@@ -2,10 +2,7 @@ package com.intellibps.bib.customer;
 
 import com.google.appengine.api.datastore.Key;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,8 +25,14 @@ public class Company
     private String city;
     @Persistent
     private String country;
-    @Persistent
-    private ContactInfo contactInfo;
+    @Persistent(defaultFetchGroup="true")
+    private ContactInfo contactInfo = new ContactInfo();
+    @NotPersistent
+    private boolean isNew = false;
+    @NotPersistent
+    private boolean isDirty = false;
+    @NotPersistent
+    private boolean isDeleted = false;
 
     public void name(String name)
     {
@@ -88,5 +91,49 @@ public class Company
     public void id(Key id)
     {
         this.id = id;
+    }
+
+    public boolean isNew()
+    {
+        return isNew;
+    }
+
+    public void isNew(boolean aNew)
+    {
+        isNew = aNew;
+    }
+
+    public boolean isDirty()
+    {
+        return isDirty;
+    }
+
+    public void isDirty(boolean dirty)
+    {
+        isDirty = dirty;
+    }
+
+    public void copyFrom(Company company)
+    {
+        this.city = company.city;
+        this.companyRegistrationNo = company.companyRegistrationNo;
+        if (contactInfo == null)
+        {
+            contactInfo = new ContactInfo();
+        }
+        this.contactInfo.copyFrom(company.contactInfo);
+        this.country = company.country;
+        this.name = company.name;
+
+    }
+
+    public boolean isDeleted()
+    {
+        return isDeleted;
+    }
+
+    public void isDeleted(boolean deleted)
+    {
+        isDeleted = deleted;
     }
 }

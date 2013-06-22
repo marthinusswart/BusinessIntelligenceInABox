@@ -8,6 +8,7 @@ package com.intellibps.bib.rest;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.google.appengine.api.log.LogService;
 import com.google.appengine.api.memcache.Expiration;
 import com.google.gson.reflect.TypeToken;
 import com.intellibps.bib.customer.Company;
@@ -23,7 +24,10 @@ import javax.ws.rs.core.Response;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.logging.Logger;
+
 import com.google.gson.Gson;
 import com.intellibps.bib.security.User;
 
@@ -31,55 +35,20 @@ import com.intellibps.bib.security.User;
 public class SimpleDataService
 {
     private SessionManager sessionManager = new SessionManager();
+    private java.util.logging.Logger logger = Logger.getLogger(SimpleDataService.class.getName());
 
     @GET
     @Path("companies/{param}")
     public Response loadCompanies(@PathParam("param") String msg, @QueryParam("email") String email)
     {
-        ArrayList<Company> companies2 = new ArrayList<Company>();
-        Company company;
-
-        for (int i=1;i<=15;i++)
-        {
-           company = new Company();
-            company.name("Company " + i);
-            company.contactInfo(new ContactInfo());
-            company.contactInfo().businessEmail("company"+i+"@mail.com");
-            company.contactInfo().businessPhoneNo("1234-" + i);
-            company.city("City "+i);
-            company.companyRegistrationNo("CMP-1234-"+i);
-            company.country("South Africa");
-            company.contactInfo().mobilePhoneNo("(082) 123 89"+i);
-            company.contactInfo().physicalAddress(i+" Some Street\r\nJohannesburg\r\n2000");
-            company.contactInfo().postalAddress("P.O. Box " + i +"\r\nJohannesburg\r\n2001");
-            companies2.add(company);
-
-        }
-
-
-
-
-        String result = "";
+           String result = "";
 
         if (sessionManager.isLoggedIn(email))
         {
-            PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
-            Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.customer.Company");
-            List<Company> companies;
+            List<Company> companies = loadCompanies();
 
-            try
-            {
-               companies = (List<Company>) query.execute();
-               Gson gson = new Gson();
-               result = gson.toJson(companies);
-            }
-
-            finally
-            {
-                persistenceManager.close();
-            }
-
-
+            Gson gson = new Gson();
+            result = gson.toJson(companies);
         }
         else
         {
@@ -88,6 +57,38 @@ public class SimpleDataService
 
         return Response.status(200).entity(result).build();
 
+    }
+
+    private List<Company> loadCompanies()
+    {
+        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.customer.Company");
+        List<Company> companies;
+
+        try
+        {
+           companies = (List<Company>) query.execute();
+           Iterator<Company> companyIterator = companies.iterator();
+            logger.info("Companies loaded");
+
+            // mark the retrieved companies as not new
+            while(companyIterator.hasNext())
+            {
+                Company company = companyIterator.next();
+                company.isNew(false);
+                company.isDirty(false);
+
+            }
+
+
+        }
+
+        finally
+        {
+            persistenceManager.close();
+        }
+
+        return companies;
     }
 
     @PUT
@@ -99,23 +100,63 @@ public class SimpleDataService
         {
 
             PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
-            Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.customer.Company");
             List<Company> companies;
             Type type = new TypeToken<List<Company>>(){}.getType();
+            Gson gson = new Gson();
 
             try
             {
-                System.out.println("Received Companies: " + data);
-                Gson gson = new Gson();
+               logger.info("Received Companies: " + data);
+
                companies = gson.fromJson(data, type);
-                System.out.println("Parsed Companies: " + companies.size());
-                System.out.println("Company Id:" + companies.get(0).id());
+                logger.info("Parsed Companies: " + companies.size());
+                logger.info("Company Id:" + companies.get(0).id());
+
+                Iterator<Company> iterator = companies.iterator();
+                while (iterator.hasNext())
+                {
+                    Company company = iterator.next();
+
+                   if
+                        (company.isNew())
+                {
+                    logger.info("Saving New Company");
+                    persistenceManager.makePersistent(company);
+                    logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
+                    company.isNew(false);
+                    company.isDirty(false);
+                }
+                   else if (company.isDeleted())
+                   {
+                       logger.info("Deleting Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
+                       Company psCompany = (Company)persistenceManager.getObjectById(Company.class, company.id().getId());
+                       persistenceManager.deletePersistent(psCompany);
+
+                   }
+                    else if (company.isDirty())
+                    {
+                        logger.info("Saving Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId());
+                    Company psCompany = (Company)persistenceManager.getObjectById(Company.class, company.id().getId());
+                        logger.info("Updating Company - Kind: " + psCompany.id().getKind() + " Id: " + psCompany.id().getId() + " ContactInfo: " + psCompany.contactInfo().id().getId());
+                    psCompany.copyFrom(company);
+                    persistenceManager.makePersistent(psCompany);
+                        logger.info("Saved Company - Kind: " + company.id().getKind() + " Id: " + company.id().getId()+ " ContactInfo: " + psCompany.contactInfo().id().getId());
+                    company.isNew(false);
+                    company.isDirty(false);
+                    }
+
+                }
+
+
             }
 
             finally
             {
                 persistenceManager.close();
             }
+
+            companies = loadCompanies();
+            result = gson.toJson(companies);
 
         }
         else
