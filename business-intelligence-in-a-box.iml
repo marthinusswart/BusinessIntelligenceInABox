@@ -17,6 +17,7 @@
           </files-to-enhance>
           <run-enhancer-on-make>true</run-enhancer-on-make>
           <sdk-home-path>$USER_HOME$/Downloads/appengine-java-sdk-1.8.1</sdk-home-path>
+          <email>marthinus.swart@intellibps.com</email>
         </configuration>
       </facet>
     </facet>

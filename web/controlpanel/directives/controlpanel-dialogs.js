@@ -24,6 +24,22 @@ controlPanelDialogs.directive("deleteCompanyDialog", function ()
     }
 );
 
+controlPanelDialogs.directive("deleteUserDialog", function ()
+    {
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:"/controlpanel/views/delete-user-dialog.partial.html",
+            link:function (scope, element, attrs)
+            {
+                // hide
+                element.hide();
+
+            }
+        };
+    }
+);
+
 controlPanelDialogs.directive("confirmationDialog", function ()
     {
         return {

@@ -7,18 +7,20 @@
  */
 
 var controlPanelModule = angular
-    .module("controlPanel", ["jqComponents", "controlPanelDialogs"]);
+    .module("controlPanel", ["jqComponents", "controlPanelDialogs", "ngCookies"]);
 
 controlPanelModule.controller("controlPanelController",
-    function ($scope, $http)
+    function ($scope, $http, $cookies)
     {
         /***************************************
          *                Variables
          ****************************************/
         $scope.deleteCompanyDialogId = "#deleteCompanyDialog";
+        $scope.deleteUserDialogId = "#deleteUserDialog";
         $scope.confirmationDialogId = "#confirmationDialog";
         $scope.tabsId = "#tabs";
         $scope.deletedCompanies = [];
+        $scope.deletedUsers = [];
         $scope.users = [];
         $scope.roles = [];
         $scope.companies = [];
@@ -29,6 +31,8 @@ controlPanelModule.controller("controlPanelController",
         $scope.newSelectedTabIndex = 1;
         $scope.company;
         $scope.user;
+        $scope.sessionId = $cookies.sessionid;
+
 
         /*****************************************
          *          Functions
@@ -91,6 +95,34 @@ controlPanelModule.controller("controlPanelController",
 
         }
 
+        $scope.deleteUser = function ()
+        {
+            $($scope.deleteUserDialogId).show();
+            $($scope.deleteUserDialogId).dialog(
+                {
+                    resizable:false,
+                    height:170,
+                    modal:true,
+                    buttons:{
+                        Delete:function ()
+                        {
+                            $(this).dialog("close");
+                            $scope.user.isDeleted = true;
+                            $scope.deletedUsers.push($scope.user);
+                            $scope.removeFromArray($scope.user, $scope.users);
+                            $scope.user = $scope.users[0];
+                            $scope.$apply();
+                        },
+                        Cancel:function ()
+                        {
+                            $(this).dialog("close");
+                        }
+                    }
+                }
+            );
+
+        }
+
         $scope.confirmTabNavigation = function (title, message)
         {
             $scope.confirmationmessage = message;
@@ -127,13 +159,19 @@ controlPanelModule.controller("controlPanelController",
          *************************************/
         $scope.loadCompanies = function ()
         {
-            $http.get("/rest/data/companies/load?email=marthinus.swart@intellibps.com").success(
+            $http.get("/rest/data/companies/load?sessionid="+$scope.sessionId).success(
                 function (reply)
                 {
                     $scope.companies = reply;
                     $scope.company = $scope.companies[0];
                 }
+            ).error(
+                function(e)
+                {
+                    console.error(e);
+                }
             );
+
         }
 
         $scope.saveCompanies = function ()
@@ -148,7 +186,7 @@ controlPanelModule.controller("controlPanelController",
                 }
             }
 
-            $http.put("/rest/data/companies/save?email=marthinus.swart@intellibps.com", $scope.companies).success(
+            $http.put("/rest/data/companies/save?sessionid="+$scope.sessionId, $scope.companies).success(
                 function (reply)
                 {
                     $scope.companies = reply;
@@ -159,7 +197,7 @@ controlPanelModule.controller("controlPanelController",
 
         $scope.loadUsers = function (companyId)
         {
-            $http.get("/rest/data/users/"+companyId+"?email=marthinus.swart@intellibps.com").success(
+            $http.get("/rest/data/users/"+companyId+"?sessionid="+$scope.sessionId).success(
                 function (reply)
                 {
                     $scope.users = reply;
@@ -175,18 +213,19 @@ controlPanelModule.controller("controlPanelController",
 
         $scope.saveUsers = function (companyId)
         {
-            /*
-            if ($scope.deletedCompanies.length > 0)
+
+            if ($scope.deletedUsers.length > 0)
             {
-                // add the deleted companies to the list
-                for (var i = 0; i < $scope.deletedCompanies.length; i++)
+                console.info("adding deleted users");
+                // add the deleted users to the list
+                for (var i = 0; i < $scope.deletedUsers.length; i++)
                 {
-                    $scope.companies.push($scope.deletedCompanies[i]);
-                    $scope.deletedCompanies = [];
+                    $scope.users.push($scope.deletedUsers[i]);
+                    $scope.deletedUsers = [];
                 }
             }
-            */
-            $http.put("/rest/data/users/"+companyId+"?email=marthinus.swart@intellibps.com", $scope.users).success(
+
+            $http.put("/rest/data/users/"+companyId+"?sessionid="+$scope.sessionId, $scope.users).success(
                 function (reply)
                 {
                     $scope.users = reply;

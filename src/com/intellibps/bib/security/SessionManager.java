@@ -3,12 +3,15 @@ package com.intellibps.bib.security;
 import com.google.appengine.api.memcache.Expiration;
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
-import com.intellibps.bib.persistence.PersistanceController;
+import com.intellibps.bib.persistence.PersistenceController;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,18 +23,45 @@ import java.util.List;
 public class SessionManager
 {
     private MemcacheService memcacheService = MemcacheServiceFactory.getMemcacheService();
-    private int loginTimeOut = 60 * 30; // 30 min
+    private int loginTimeOut = 1000* 60 * 5; // 5 min
+    private java.util.logging.Logger logger = Logger.getLogger(SessionManager.class.getName());
+    private SecureRandom secureRandom = new SecureRandom();
 
-    public boolean isLoggedIn(String email)
+    public boolean isLoggedIn(String sessionId)
     {
-        return memcacheService.contains(email);
+        boolean exists = false;
+        logger.info("Checking whether the sessionId exists in the memcache");
+        exists =  memcacheService.contains(sessionId);
+        logger.info("sessionId exists? : " + exists);
+
+        if (exists)
+        {
+            Credentials credentials = (Credentials) memcacheService.get(sessionId);
+            logger.info("Login time: " + credentials.loginTime().toString());
+            Date timeNow = new Date(System.currentTimeMillis());
+            if (timeNow.getTime() - credentials.loginTime().getTime() > loginTimeOut)
+            {
+                logger.info("Logout timer was hit: " + credentials.loginTime().toString());
+                memcacheService.delete(sessionId);
+                exists = false;
+            }
+            else
+            {
+                // reset timeout
+                credentials.loginTime(timeNow);
+                logger.info("Logout timer reset: " + credentials.loginTime().toString());
+                memcacheService.put(sessionId,credentials);
+            }
+        }
+
+        return exists;
     }
 
-    public boolean login(String email, String password) throws NullPointerException
+    public String login(String email, String password) throws NullPointerException
     {
-        boolean result = false;
+        String result = null;
 
-        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE email == :email");
 
         try
@@ -48,10 +78,12 @@ public class SessionManager
                     credentials.loginTime(new Date(System.currentTimeMillis()));
                     credentials.username(user.firstname());
 
-                    // Add to memcache
-                    memcacheService.put(email, credentials, Expiration.byDeltaSeconds(loginTimeOut));
+                    result = nextSessionId();
 
-                    result = true;
+                    // Add to memcache
+                    memcacheService.put(result, credentials);
+
+
                 }
             }
         }
@@ -69,7 +101,7 @@ public class SessionManager
     {
         boolean result = false;
 
-        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE email == :email");
 
 
@@ -103,6 +135,11 @@ public class SessionManager
         }
 
         return result;
+    }
+
+    private String nextSessionId()
+    {
+        return new BigInteger(130, secureRandom).toString(32);
     }
 
 }

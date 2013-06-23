@@ -8,13 +8,9 @@ package com.intellibps.bib.rest;
  * To change this template use File | Settings | File Templates.
  */
 
-import com.google.appengine.api.log.LogService;
-import com.google.appengine.api.memcache.Expiration;
 import com.google.gson.reflect.TypeToken;
 import com.intellibps.bib.customer.Company;
-import com.intellibps.bib.customer.ContactInfo;
-import com.intellibps.bib.persistence.PersistanceController;
-import com.intellibps.bib.security.Credentials;
+import com.intellibps.bib.persistence.PersistenceController;
 import com.intellibps.bib.security.SessionManager;
 
 import javax.jdo.PersistenceManager;
@@ -22,8 +18,6 @@ import javax.jdo.Query;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
@@ -37,21 +31,23 @@ public class SimpleDataService
     private SessionManager sessionManager = new SessionManager();
     private java.util.logging.Logger logger = Logger.getLogger(SimpleDataService.class.getName());
 
+
     @GET
     @Path("companies/{param}")
-    public Response loadCompanies(@PathParam("param") String msg, @QueryParam("email") String email)
+    public Response loadCompanies(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId) throws IllegalAccessException
     {
         String result = "";
 
-        if (sessionManager.isLoggedIn(email))
+        if (sessionManager.isLoggedIn(sessionId))
         {
+            logger.info("Loading companies");
             List<Company> companies = loadCompanies();
 
             Gson gson = new Gson();
             result = gson.toJson(companies);
         } else
         {
-            result = "Not logged in";
+            throw new IllegalAccessException("Not logged in");
         }
 
         return Response.status(200).entity(result).build();
@@ -60,7 +56,7 @@ public class SimpleDataService
 
     private List<Company> loadCompanies()
     {
-        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.customer.Company");
         List<Company> companies;
 
@@ -68,10 +64,7 @@ public class SimpleDataService
         {
             companies = (List<Company>) query.execute();
 
-            logger.info("Companies loaded");
-
-
-
+            logger.info("Companies loaded " + companies.size());
 
         } finally
         {
@@ -85,7 +78,6 @@ public class SimpleDataService
             Company company = companyIterator.next();
             company.isNew(false);
             company.isDirty(false);
-
         }
 
         return companies;
@@ -93,13 +85,13 @@ public class SimpleDataService
 
     @PUT
     @Path("companies/{param}")
-    public Response saveCompanies(@PathParam("param") String msg, @QueryParam("email") String email, String data)
+    public Response saveCompanies(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId, String data)
     {
         String result = "";
-        if (sessionManager.isLoggedIn(email))
+        if (sessionManager.isLoggedIn(sessionId))
         {
 
-            PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+            PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
             List<Company> companies;
             Type type = new TypeToken<List<Company>>()
             {
@@ -165,11 +157,11 @@ public class SimpleDataService
 
     @GET
     @Path("users/{param}")
-    public Response loadUsers(@PathParam("param") String companyId, @QueryParam("email") String email)
+    public Response loadUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId)
     {
         String result = "";
 
-        if (sessionManager.isLoggedIn(email))
+        if (sessionManager.isLoggedIn(sessionId))
         {
             List<User> users = loadUsers(Long.parseLong(companyId));
 
@@ -186,7 +178,7 @@ public class SimpleDataService
 
     private List<User> loadUsers(long companyId)
     {
-        PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE company==:company");
         List<User> users;
         Company company;
@@ -222,13 +214,13 @@ public class SimpleDataService
 
     @PUT
     @Path("users/{param}")
-    public Response saveUser(@PathParam("param") String companyId, @QueryParam("email") String email, String data)
+    public Response saveUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId, String data)
     {
         String result = "";
-        if (sessionManager.isLoggedIn(email))
+        if (sessionManager.isLoggedIn(sessionId))
         {
 
-            PersistenceManager persistenceManager = PersistanceController.persistenceManagerFactory.getPersistenceManager();
+            PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
             List<User> users;
             Type type = new TypeToken<List<User>>()
             {

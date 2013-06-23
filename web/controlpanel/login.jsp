@@ -6,13 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html ng-app="loginModule">
 <head>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/angular.min.js"></script>
 
-    <link rel="stylesheet" href="/css/pepper-grinder/jquery-ui.css"
+    <link rel="stylesheet" href="/css/ui-lightness/jquery-ui.css"
           type="text/css">
     <link rel="stylesheet" href="/controlpanel/css/default.css" type="text/css">
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>

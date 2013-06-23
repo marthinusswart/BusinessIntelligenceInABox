@@ -64,7 +64,7 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
             }
         }
         else
-        if (!sessionManager.isLoggedIn(webHelper.getEmail(request.getCookies())))
+        if (!sessionManager.isLoggedIn(webHelper.getSessionId(request.getCookies())))
         {
             request.getRequestDispatcher("controlpanel/login.jsp").include(request, response);
         }
@@ -79,13 +79,14 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        if (!sessionManager.login(email, password))
+        String sessionId = sessionManager.login(email, password);
+        if (sessionId == null)
         {
             request.getRequestDispatcher("controlpanel/login.jsp").include(request, response);
         }
         else
         {
-            Cookie cookie = new Cookie("email", email);
+            Cookie cookie = new Cookie("sessionid", sessionId);
             response.addCookie(cookie);
             request.getRequestDispatcher("controlpanel/controlpanel.jsp").include(request, response);
         }
