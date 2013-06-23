@@ -281,23 +281,7 @@ controlPanelModule.controller("controlPanelController",
                     $scope.users.isDirty = true;
                 }
             });
-            /*
-            $scope.$watch("user.firstname", function (oldValue, newValue)
-            {
 
-
-                    $scope.user.fullname = $scope.user.firstname + " " + $scope.user.lastname;
-
-            });
-
-            $scope.$watch("user.lastname", function (oldValue, newValue)
-            {
-
-
-                $scope.user.fullname = $scope.user.firstname + " " + $scope.user.lastname;
-
-            });
-            */
         }
 
         /**************************************

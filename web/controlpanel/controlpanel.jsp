@@ -11,6 +11,8 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/angular.min.js"></script>
+    <!-- Breaks the databinding -->
+    <!--<script src="/js/jquery.maskedinput.min.js"></script>-->
 
     <link rel="stylesheet" href="/css/pepper-grinder/jquery-ui.css" type="text/css">
     <link rel="stylesheet" href="/controlpanel/css/default.css" type="text/css">
@@ -63,7 +65,7 @@
                     <div><input type="text" class="fill rounded-border" ng-model="company.country" ng-change="company.isDirty=true"></div>
                     <p></p>
                     Business Phone:
-                    <div><input type="text" class="fill rounded-border" ng-model="company.contactInfo.businessPhoneNo" ng-change="company.isDirty=true"></div>
+                    <div><input type="text" id="businessphone" class="fill rounded-border" ng-model="company.contactInfo.businessPhoneNo" ng-change="company.isDirty=true"></div>
                     <p></p>
                     Mobile Phone:
                     <div><input type="text" class="fill rounded-border" ng-model="company.contactInfo.mobilePhoneNo" ng-change="company.isDirty=true"></div>
@@ -108,24 +110,10 @@
                     Email:
                     <div><input type="text" class="fill rounded-border" ng-model="user.email" ng-change="user.isDirty=true"></div>
                     <p></p>
-                    Home Country:
-                    <div><input type="text" class="fill rounded-border" ng-model="user.country" ng-change="user.isDirty=true"></div>
-                    <p></p>
-                    Business Phone:
-                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.businessPhoneNo" ng-change="user.isDirty=true"></div>
-                    <p></p>
-                    Mobile Phone:
-                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.mobilePhoneNo" ng-change="user.isDirty=true"></div>
-                    <p></p>
-                    Business Email:
-                    <div><input type="text" class="fill rounded-border" ng-model="user.contactInfo.businessEmail" ng-change="user.isDirty=true"></div>
+                    Password:
+                    <div><input type="password" class="fill rounded-border" ng-model="user.password" ng-change="user.isDirty=true"></div>
                 </div>
                 <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
-                    Physical Address:
-                    <div><textarea type="text" class="fill rounded-border" ng-model="user.contactInfo.physicalAddress"  ng-change="user.isDirty=true" style="height: 100px;"></textarea></div>
-                    <p></p>
-                    Postal Address:
-                    <div><textarea type="text" class="fill rounded-border" ng-model="user.contactInfo.postalAddress"  ng-change="user.isDirty=true" style="height: 100px;"></textarea></div>
                 </div>
 
             </div>
@@ -144,6 +132,7 @@
         <jq-button button-id="addUserButton"></jq-button>
         <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
     </initialise>
+
 </div>
 
 </body>

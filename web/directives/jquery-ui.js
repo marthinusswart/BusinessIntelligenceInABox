@@ -48,6 +48,26 @@ jqComponents.directive("jqTabs", function ()
     }
 );
 
+// Doesn't work with AngularJS Databinding, breaks the databinding
+jqComponents.directive("jqMaskedInput", function ()
+    {
+        return {
+            restrict:'E',
+
+            link:function (scope, element, attrs)
+            {
+
+                // make it a jQuery Mask Input
+                $("#"+attrs.inputId).mask(
+                    attrs.inputMask
+             );
+
+
+            }
+        };
+    }
+);
+
 
 
 

@@ -38,6 +38,8 @@ public class User
     private boolean isNew = false;
     @NotPersistent
     private boolean isDeleted = false;
+    @NotPersistent
+    public static final String DEFAULT_PASSWORD = "12345678";
 
     public User()
     {
@@ -145,6 +147,11 @@ public class User
         this.firstname = user.firstname;
         this.lastname = user.lastname;
         this.email = user.email;
+
+        if (!user.password.equals(User.DEFAULT_PASSWORD))
+        {
+        this.password = user.password;
+        }
 
     }
 

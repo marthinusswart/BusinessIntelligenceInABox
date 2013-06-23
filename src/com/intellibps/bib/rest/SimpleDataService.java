@@ -67,22 +67,25 @@ public class SimpleDataService
         try
         {
             companies = (List<Company>) query.execute();
-            Iterator<Company> companyIterator = companies.iterator();
+
             logger.info("Companies loaded");
 
-            // mark the retrieved companies as not new
-            while (companyIterator.hasNext())
-            {
-                Company company = companyIterator.next();
-                company.isNew(false);
-                company.isDirty(false);
 
-            }
 
 
         } finally
         {
             persistenceManager.close();
+        }
+
+        Iterator<Company> companyIterator = companies.iterator();
+        // mark the retrieved companies as not new
+        while (companyIterator.hasNext())
+        {
+            Company company = companyIterator.next();
+            company.isNew(false);
+            company.isDirty(false);
+
         }
 
         return companies;
@@ -193,22 +196,25 @@ public class SimpleDataService
         {
             company = (Company) persistenceManager.getObjectById(Company.class, companyId);
             users = (List<User>) query.execute(company.id());
-            Iterator<User> userIterator = users.iterator();
+
             logger.info("Users loaded " + users.size());
-
-            // mark the retrieved companies as not new
-            while (userIterator.hasNext())
-            {
-                User user = userIterator.next();
-                user.isNew(false);
-                user.isDirty(false);
-
-            }
-
 
         } finally
         {
             persistenceManager.close();
+        }
+
+        Iterator<User> userIterator = users.iterator();
+        // mark the retrieved users as not new
+        while (userIterator.hasNext())
+        {
+            User user = userIterator.next();
+            logger.info("User password: " + user.password());
+            // default to 1to8
+            user.password(User.DEFAULT_PASSWORD);
+            user.isNew(false);
+            user.isDirty(false);
+
         }
 
         return users;
@@ -262,6 +268,7 @@ public class SimpleDataService
                         logger.info("Saving User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
                         User psUser = (User) persistenceManager.getObjectById(User.class, user.id().getId());
                         logger.info("Updating User - Kind: " + psUser.id().getKind() + " Id: " + psUser.id().getId());
+                        logger.info("User password: " + user.password() + " psUser password: " + psUser.password());
                         psUser.copyFrom(user);
                         persistenceManager.makePersistent(psUser);
                         logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
