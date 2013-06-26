@@ -1,9 +1,8 @@
 package com.intellibps.bib.security;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import com.google.appengine.api.datastore.Key;
+
+import javax.jdo.annotations.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,11 +21,12 @@ public class Role
     private String name;
     @Persistent
     private String description;
-
-    public com.google.appengine.api.datastore.Key Id()
-    {
-        return id;
-    }
+    @NotPersistent
+    private boolean isDirty;
+    @NotPersistent
+    private boolean isNew;
+    @NotPersistent
+    private boolean isDeleted;
 
     public void name(String name)
     {
@@ -43,4 +43,54 @@ public class Role
         this.description = description;
     }
 
+    public String description()
+    {
+        return description;
+    }
+
+    public boolean isDirty()
+    {
+        return isDirty;
+    }
+
+    public void isDirty(boolean isDirty)
+    {
+        this.isDirty = isDirty;
+    }
+
+    public boolean isNew()
+    {
+        return isNew;
+    }
+
+    public void isNew(boolean isNew)
+    {
+        this.isNew = isNew;
+    }
+
+    public boolean isDeleted()
+    {
+        return isDeleted;
+    }
+
+    public void isDeleted(boolean isDeleted)
+    {
+        this.isDeleted = isDeleted;
+    }
+
+    public com.google.appengine.api.datastore.Key id()
+    {
+        return id;
+    }
+
+    public void id(Key id)
+    {
+        this.id = id;
+    }
+
+    public void copyFrom(Role role)
+    {
+        this.name = role.name;
+        this.description = role.description;
+    }
 }

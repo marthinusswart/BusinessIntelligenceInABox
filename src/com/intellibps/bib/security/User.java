@@ -4,6 +4,7 @@ import com.google.appengine.api.datastore.Key;
 import com.intellibps.bib.customer.ContactInfo;
 
 import javax.jdo.annotations.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,10 +41,13 @@ public class User
     private boolean isDeleted = false;
     @NotPersistent
     public static final String DEFAULT_PASSWORD = "12345678";
+    @NotPersistent
+    private ArrayList<Role> fullRoles;
 
     public User()
     {
         roles = new HashSet<Key>();
+        fullRoles = new ArrayList<Role>();
     }
 
     public String firstname()
@@ -91,6 +95,10 @@ public class User
         return roles;
     }
 
+    public void roles(Set<com.google.appengine.api.datastore.Key> roles)
+    {
+        this.roles = roles;
+    }
 
     public boolean isDirty()
     {
@@ -150,11 +158,22 @@ public class User
 
         if (!user.password.equals(User.DEFAULT_PASSWORD))
         {
-        this.password = user.password;
+            this.password = user.password;
         }
+
+        this.roles(user.roles());
 
     }
 
+    public ArrayList<Role> fullRoles()
+    {
+        return fullRoles;
+    }
+
+    public void roles(ArrayList<Role> roles)
+    {
+        this.fullRoles = fullRoles;
+    }
 
 }
 

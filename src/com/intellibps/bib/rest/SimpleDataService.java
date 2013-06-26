@@ -11,8 +11,10 @@ package com.intellibps.bib.rest;
 import com.google.gson.reflect.TypeToken;
 import com.intellibps.bib.customer.Company;
 import com.intellibps.bib.persistence.PersistenceController;
+import com.intellibps.bib.security.Role;
 import com.intellibps.bib.security.SessionManager;
 
+import javax.annotation.security.RolesAllowed;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 import javax.ws.rs.*;
@@ -85,7 +87,7 @@ public class SimpleDataService
 
     @PUT
     @Path("companies/{param}")
-    public Response saveCompanies(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId, String data)
+    public Response saveCompanies(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId, String data) throws IllegalAccessException
     {
         String result = "";
         if (sessionManager.isLoggedIn(sessionId))
@@ -111,8 +113,7 @@ public class SimpleDataService
                 {
                     Company company = iterator.next();
 
-                    if
-                            (company.isNew())
+                    if (company.isNew())
                     {
                         logger.info("Saving New Company");
                         persistenceManager.makePersistent(company);
@@ -148,7 +149,7 @@ public class SimpleDataService
 
         } else
         {
-            result = "Not logged in";
+            throw new IllegalAccessException("Not logged in");
         }
 
 
@@ -157,7 +158,7 @@ public class SimpleDataService
 
     @GET
     @Path("users/{param}")
-    public Response loadUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId)
+    public Response loadUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId)    throws IllegalAccessException
     {
         String result = "";
 
@@ -169,7 +170,7 @@ public class SimpleDataService
             result = gson.toJson(users);
         } else
         {
-            result = "Not logged in";
+            throw new IllegalAccessException("Not logged in");
         }
 
         return Response.status(200).entity(result).build();
@@ -191,6 +192,22 @@ public class SimpleDataService
 
             logger.info("Users loaded " + users.size());
 
+            Iterator<User> userIterator = users.iterator();
+
+            while(userIterator.hasNext())
+            {
+                User user = userIterator.next();
+                Iterator<com.google.appengine.api.datastore.Key> roles  = user.roles().iterator();
+                while (roles.hasNext())
+                {
+
+                    Role role = persistenceManager.getObjectById(Role.class, roles.next().getId());
+                    logger.info("Adding role: " + role.name());
+                    user.fullRoles().add(role);
+                }
+            }
+
+
         } finally
         {
             persistenceManager.close();
@@ -201,7 +218,6 @@ public class SimpleDataService
         while (userIterator.hasNext())
         {
             User user = userIterator.next();
-            logger.info("User password: " + user.password());
             // default to 1to8
             user.password(User.DEFAULT_PASSWORD);
             user.isNew(false);
@@ -214,7 +230,7 @@ public class SimpleDataService
 
     @PUT
     @Path("users/{param}")
-    public Response saveUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId, String data)
+    public Response saveUsers(@PathParam("param") String companyId, @QueryParam("sessionid") String sessionId, String data) throws IllegalAccessException
     {
         String result = "";
         if (sessionManager.isLoggedIn(sessionId))
@@ -245,6 +261,16 @@ public class SimpleDataService
                         logger.info("Company Id: " + companyId);
                         company = (Company) persistenceManager.getObjectById(Company.class, Long.parseLong(companyId));
                         user.company(company.id());
+
+                        logger.info("Adding User Roles");
+                        Iterator<Role> roleIterator = user.fullRoles().iterator();
+                        while (roleIterator.hasNext())
+                        {
+                            Role psRole = persistenceManager.getObjectById(Role.class, roleIterator.next().id().getId());
+                            logger.info("Loaded role: " + psRole.id());
+                            user.roles().add(psRole.id());
+                        }
+
                         logger.info("Saving New User");
                         persistenceManager.makePersistent(user);
                         logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
@@ -260,8 +286,18 @@ public class SimpleDataService
                         logger.info("Saving User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
                         User psUser = (User) persistenceManager.getObjectById(User.class, user.id().getId());
                         logger.info("Updating User - Kind: " + psUser.id().getKind() + " Id: " + psUser.id().getId());
-                        logger.info("User password: " + user.password() + " psUser password: " + psUser.password());
                         psUser.copyFrom(user);
+
+                        logger.info("Adding User Roles");
+                        Iterator<Role> roleIterator = user.fullRoles().iterator();
+                        while (roleIterator.hasNext())
+                        {
+                            Role role = roleIterator.next();
+                            Role psRole = persistenceManager.getObjectById(Role.class, role.id().getId());
+                            logger.info("Adding User Role: " + psRole.id());
+                            psUser.roles().add(psRole.id());
+                        }
+
                         persistenceManager.makePersistent(psUser);
                         logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
 
@@ -280,7 +316,131 @@ public class SimpleDataService
 
         } else
         {
-            result = "Not logged in";
+            throw new IllegalAccessException("Not logged in");
+        }
+
+
+        return Response.status(201).entity(result).build();
+    }
+
+    @GET
+    @Path("roles/{param}")
+    public Response loadRoles(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId)  throws IllegalAccessException
+    {
+        String result = "";
+
+        if (sessionManager.isLoggedIn(sessionId))
+        {
+            List<Role> roles = loadRoles();
+
+            Gson gson = new Gson();
+            result = gson.toJson(roles);
+        } else
+        {
+            throw new IllegalAccessException("Not logged in");
+        }
+
+        return Response.status(200).entity(result).build();
+
+    }
+
+    private List<Role> loadRoles()
+    {
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
+        Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.Role");
+        List<Role> roles;
+        logger.info("Loading roles");
+
+        try
+        {
+
+            roles = (List<Role>) query.execute();
+
+            logger.info("Roles loaded " + roles.size());
+
+        } finally
+        {
+            persistenceManager.close();
+        }
+
+        Iterator<Role> roleIterator = roles.iterator();
+        // mark the retrieved users as not new
+        while (roleIterator.hasNext())
+        {
+            Role role = roleIterator.next();
+            role.isNew(false);
+            role.isDirty(false);
+
+        }
+
+        return roles;
+    }
+
+    @PUT
+    @Path("roles/{param}")
+    public Response saveRoles(@PathParam("param") String msg, @QueryParam("sessionid") String sessionId, String data) throws IllegalAccessException
+    {
+        String result = "";
+        if (sessionManager.isLoggedIn(sessionId))
+        {
+
+            PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
+            List<Role> roles;
+            Type type = new TypeToken<List<Role>>()
+            {
+            }.getType();
+            Gson gson = new Gson();
+
+            try
+            {
+                logger.info("Received Roles: " + data);
+
+                roles = gson.fromJson(data, type);
+                logger.info("Parsed Roles: " + roles.size());
+                logger.info("Role Id:" + roles.get(0).id());
+
+                Iterator<Role> iterator = roles.iterator();
+                while (iterator.hasNext())
+                {
+                    Role role = iterator.next();
+
+                    if(role.isNew())
+                    {
+                        logger.info("Saving New Role");
+                        persistenceManager.makePersistent(role);
+                        logger.info("Saved Role - Kind: " + role.id().getKind() + " Id: " + role.id().getId());
+
+                    } else if (role.isDeleted())
+                    {
+                        logger.info("Deleting Role - Kind: " + role.id().getKind() + " Id: " + role.id().getId());
+                        Role psCompany = (Role) persistenceManager.getObjectById(Role.class, role.id().getId());
+                        persistenceManager.deletePersistent(psCompany);
+
+                    } else if (role.isDirty())
+                    {
+                        logger.info("Saving Role - Kind: " + role.id().getKind() + " Id: " + role.id().getId());
+                        Role psRole = (Role) persistenceManager.getObjectById(Role.class, role.id().getId());
+                        logger.info("Updating Role - Kind: " + psRole.id().getKind() + " Id: " + psRole.id().getId());
+                        psRole.copyFrom(role);
+                        persistenceManager.makePersistent(psRole);
+                        logger.info("Saved Role - Kind: " + role.id().getKind() + " Id: " + role.id().getId());
+
+                    }
+
+                }
+
+
+            } finally
+            {
+                persistenceManager.close();
+            }
+
+            roles = loadRoles();
+            result = gson.toJson(roles);
+
+        } else
+        {
+            throw new IllegalAccessException("Not logged in");
         }
 
 

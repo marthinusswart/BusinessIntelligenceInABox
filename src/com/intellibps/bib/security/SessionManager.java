@@ -122,7 +122,7 @@ public class SessionManager
                 role.description("The super user role, has access everywhere");
                 Role persistedRole = persistenceManager.makePersistent(role);
 
-                user.roles().add(persistedRole.Id());
+                user.roles().add(persistedRole.id());
                 persistenceManager.makePersistent(user);
 
                 result = true;

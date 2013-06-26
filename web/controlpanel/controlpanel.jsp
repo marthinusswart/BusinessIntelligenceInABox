@@ -22,6 +22,7 @@
 
     <script type="text/javascript" src="/controlpanel/models/company.js"></script>
     <script type="text/javascript" src="/controlpanel/models/user.js"></script>
+    <script type="text/javascript" src="/controlpanel/models/role.js"></script>
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>
     <script type="text/javascript" src="controlpanel/directives/controlpanel-dialogs.js"></script>
     <script type="text/javascript" src="/controlpanel/controllers/controlpanel.js"></script>
@@ -114,6 +115,7 @@
             <div id="user-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
                 <select id="user-list" ng-model="user"
                         ng-options="obj.email for obj in users" size="10"
+                        ng-change="userChanged()"
                         class="fill styled">
                 </select>
 
@@ -138,27 +140,83 @@
                                 ng-change="user.isDirty=true"></div>
                 </div>
                 <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+
+                    Roles:
+                    <div id="user-roles-toolbar" class="rounded-border"
+                            >
+                        <select id="user-role-list" ng-model="userRole"
+                                ng-options="obj.name for obj in user.fullRoles" size="10"
+                                class="fill styled-inner-border"
+                                style="height: 88px;">
+                        </select>
+
+                        <button id="addUserRoleButton" class="toolbar-button" ng-click="addUserRole()" style="margin-left: 5px;">Add</button>
+                        <button id="deleteUserRoleButton" class="toolbar-button" ng-click="deleteUserRole()">Delete</button>
+                    </div>
+
                 </div>
 
             </div>
         </div>
-        <div id="roleTab"></div>
+        <div id="roleTab">
+            <div id="role-toolbar" class="ui-state-active ui-corner-all"
+                 style="position:absolute;left:10px;right:10px;">
+                <button id="addRoleButton" class="toolbar-button" ng-click="addRole()" style="margin-left: 5px;">Add</button>
+                <button id="deleteRoleButton" class="toolbar-button" ng-click="deleteRole()">Delete</button>
+                <button id="saveRoleButton" class="toolbar-button" ng-click="saveRoles()">Save</button>
+                <div style="position: absolute;left:300px;top:2px;right: 10px;">
+                    <p align="right">Role is dirty = {{role.isDirty}} Roles is dirty = {{roles.isDirty}}</p></div>
+
+            </div>
+            <div id="role-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
+                <select id="role-list" ng-model="role"
+                        ng-options="obj.name for obj in roles" size="10"
+                        class="fill styled">
+                </select>
+
+            </div>
+            <div id="role-detail" class="main-content"
+                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
+                <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
+                    Name:
+                    <div><input type="text" class="fill rounded-border" ng-model="role.name"
+                                ng-change="role.isDirty=true"></div>
+                    <p></p>
+                    Description:
+                    <div>
+                        <textarea type="text" class="fill rounded-border"
+                                  ng-model="role.description" ng-change="role.isDirty=true"
+                                  style="height: 100px;"></textarea>
+                    </div>
+                    <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <delete-company-dialog></delete-company-dialog>
+        <delete-role-dialog></delete-role-dialog>
+        <delete-user-dialog></delete-user-dialog>
+        <confirmation-dialog></confirmation-dialog>
+        <add-user-role-dialog></add-user-role-dialog>
+
+        <initialise comment="Initialise all the different controls that need the DOM to be available first">
+
+            <jq-button button-id="saveCompanyButton"></jq-button>
+            <jq-button button-id="deleteCompanyButton"></jq-button>
+            <jq-button button-id="addCompanyButton"></jq-button>
+            <jq-button button-id="saveUserButton"></jq-button>
+            <jq-button button-id="deleteUserButton"></jq-button>
+            <jq-button button-id="addUserButton"></jq-button>
+            <jq-button button-id="saveRoleButton"></jq-button>
+            <jq-button button-id="deleteRoleButton"></jq-button>
+            <jq-button button-id="addRoleButton"></jq-button>
+            <jq-button button-id="addUserRoleButton"></jq-button>
+            <jq-button button-id="deleteUserRoleButton"></jq-button>
+            <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
+        </initialise>
+
     </div>
-    <delete-company-dialog></delete-company-dialog>
-    <delete-user-dialog></delete-user-dialog>
-    <confirmation-dialog></confirmation-dialog>
-    <initialise comment="Initialise all the different controls that need the DOM to be available first">
-
-        <jq-button button-id="saveCompanyButton"></jq-button>
-        <jq-button button-id="deleteCompanyButton"></jq-button>
-        <jq-button button-id="addCompanyButton"></jq-button>
-        <jq-button button-id="saveUserButton"></jq-button>
-        <jq-button button-id="deleteUserButton"></jq-button>
-        <jq-button button-id="addUserButton"></jq-button>
-        <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
-    </initialise>
-
-</div>
 
 </body>
 </html>

@@ -1,11 +1,11 @@
 /**
  * Created with IntelliJ IDEA.
  * User: marthinus
- * Date: 2013/06/22
- * Time: 15:25
+ * Date: 2013/06/25
+ * Time: 15:21
  * To change this template use File | Settings | File Templates.
  */
-var User = function User()
+var Role = function Role()
 {
-         roles = [];
+
 }

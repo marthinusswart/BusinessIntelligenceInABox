@@ -88,7 +88,8 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
         {
             Cookie cookie = new Cookie("sessionid", sessionId);
             response.addCookie(cookie);
-            request.getRequestDispatcher("controlpanel/controlpanel.jsp").include(request, response);
+            response.sendRedirect("/cpanel");
+            //request.getRequestDispatcher("controlpanel/controlpanel.jsp").include(request, response);
         }
     }
 

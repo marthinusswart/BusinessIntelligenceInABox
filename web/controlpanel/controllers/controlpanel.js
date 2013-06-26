@@ -17,10 +17,13 @@ controlPanelModule.controller("controlPanelController",
          ****************************************/
         $scope.deleteCompanyDialogId = "#deleteCompanyDialog";
         $scope.deleteUserDialogId = "#deleteUserDialog";
+        $scope.deleteRoleDialogId = "#deleteRoleDialog";
         $scope.confirmationDialogId = "#confirmationDialog";
+        $scope.addUserRoleDialog = "#addUserRoleDialog";
         $scope.tabsId = "#tabs";
         $scope.deletedCompanies = [];
         $scope.deletedUsers = [];
+        $scope.deletedRoles = [];
         $scope.users = [];
         $scope.roles = [];
         $scope.companies = [];
@@ -31,7 +34,9 @@ controlPanelModule.controller("controlPanelController",
         $scope.newSelectedTabIndex = 1;
         $scope.company;
         $scope.user;
+        $scope.role;
         $scope.sessionId = $cookies.sessionid;
+        $scope.roleToAdd;
 
 
         /*****************************************
@@ -65,6 +70,20 @@ controlPanelModule.controller("controlPanelController",
 
             $scope.user = user;
             $scope.users.push($scope.user);
+        }
+
+        $scope.addRole = function()
+        {
+
+            var role = new Role();
+            role.name = "New";
+            role.description = "New";
+            role.isNew = true;
+            role.isDirty = false;
+            role.isDeleted = false;
+
+            $scope.role = role;
+            $scope.roles.push($scope.role);
         }
 
         $scope.deleteCompany = function ()
@@ -123,6 +142,63 @@ controlPanelModule.controller("controlPanelController",
 
         }
 
+        $scope.deleteRole = function ()
+        {
+            $($scope.deleteRoleDialogId).show();
+            $($scope.deleteRoleDialogId).dialog(
+                {
+                    resizable:false,
+                    height:170,
+                    modal:true,
+                    buttons:{
+                        Delete:function ()
+                        {
+                            $(this).dialog("close");
+                            $scope.role.isDeleted = true;
+                            $scope.deletedRoles.push($scope.role);
+                            $scope.removeFromArray($scope.role, $scope.roles);
+                            $scope.role = $scope.roles[0];
+                            $scope.$apply();
+                        },
+                        Cancel:function ()
+                        {
+                            $(this).dialog("close");
+                        }
+                    }
+                }
+            );
+
+        }
+
+        $scope.addUserRole = function ()
+        {
+            $scope.roleToAdd = $scope.roles[0];
+
+            $($scope.addUserRoleDialog).show();
+            $($scope.addUserRoleDialog).dialog(
+                {
+                    resizable:false,
+                    height:250,
+                    modal:true,
+                    buttons:{
+                        Add:function ()
+                        {
+                            $(this).dialog("close");
+                            $scope.user.fullRoles.push($scope.roleToAdd);
+                            $scope.userRole = $scope.user.fullRoles[0];
+                            $scope.user.isDirty = true;
+                            $scope.$apply();
+                        },
+                        Cancel:function ()
+                        {
+                            $(this).dialog("close");
+                        }
+                    }
+                }
+            );
+
+        }
+
         $scope.confirmTabNavigation = function (title, message)
         {
             $scope.confirmationmessage = message;
@@ -155,7 +231,7 @@ controlPanelModule.controller("controlPanelController",
             );
         }
         /*************************************
-         *               REST Services
+         *          REST Services
          *************************************/
         $scope.loadCompanies = function ()
         {
@@ -202,8 +278,12 @@ controlPanelModule.controller("controlPanelController",
                 {
                     $scope.users = reply;
                     $scope.user = $scope.users[0];
+                    $scope.userRole = $scope.user.fullRoles[0];
                 }
-            );
+            ).error(function(data,status,headers,config)
+                {
+                    console.error(data);
+                });
         }
 
         $scope.saveSelectedCompanyUsers = function()
@@ -234,6 +314,53 @@ controlPanelModule.controller("controlPanelController",
             );
         }
 
+        $scope.loadRoles = function ()
+        {
+            $http.get("/rest/data/roles/load?sessionid="+$scope.sessionId).success(
+                function (reply)
+                {
+                    $scope.roles = reply;
+                    $scope.role = $scope.roles[0];
+                }
+            ).error(
+                function(data,status,headers,config)
+                {
+                    console.error(data);
+                }
+            );
+
+        }
+
+        $scope.saveRoles = function ()
+        {
+            if ($scope.deletedRoles.length > 0)
+            {
+                // add the deleted companies to the list
+                for (var i = 0; i < $scope.deletedRoles.length; i++)
+                {
+                    $scope.roles.push($scope.deletedRoles[i]);
+                    $scope.deletedRoles = [];
+                }
+            }
+
+            $http.put("/rest/data/roles/save?sessionid="+$scope.sessionId, $scope.roles).success(
+                function (reply)
+                {
+                    $scope.roles = reply;
+                    $scope.role = $scope.roles[0];
+                }
+            ).error(
+                function(e)
+                {
+                    console.error(e);
+                }
+            );
+        }
+
+
+        /*****************************
+         * Candidate to go into a service of some kind
+         */
         $scope.removeFromArray = function (item, array)
         {
             for (var i = array.length - 1; i >= 0; i--)
@@ -273,8 +400,9 @@ controlPanelModule.controller("controlPanelController",
                 {
 
                     $scope.confirmTabNavigation("Lose Company Changes", "Some Company details changed, switching to another tab will lose the changes. Lose changes?");
-                    // always return false in this instance
-                    // we are working async, so no blocking
+                    /* always return false in this instance
+                    * we are working async, so no blocking
+                    * */
                     return false;
                 }
 
@@ -291,11 +419,14 @@ controlPanelModule.controller("controlPanelController",
                     // always return false in this instance
                     return false;
                 }
+
+                // Load all the roles
+                $scope.loadRoles();
             }
             else if (ui.newPanel.attr("id") == "companyTab")
             {
                 $scope.newSelectedTabIndex = 0;
-
+                $scope.loadCompanies();
             }
 
             return true;
@@ -321,12 +452,27 @@ controlPanelModule.controller("controlPanelController",
                 }
             });
 
+            $scope.$watch("role.isDirty", function (oldValue, newValue)
+            {
+
+                if (oldValue == true)
+                {
+                    $scope.roles.isDirty = true;
+                }
+            });
+
+        }
+
+        $scope.userChanged = function()
+        {
+            $scope.userRole = $scope.user.fullRoles[0];
         }
 
         /**************************************
          *         Initialisation
          ***************************************/
         $scope.loadCompanies();
+        $scope.loadRoles();
         $scope.addDirtyWatchers();
 
 

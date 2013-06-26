@@ -24,6 +24,22 @@ controlPanelDialogs.directive("deleteCompanyDialog", function ()
     }
 );
 
+controlPanelDialogs.directive("deleteRoleDialog", function ()
+    {
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:"/controlpanel/views/delete-role-dialog.partial.html",
+            link:function (scope, element, attrs)
+            {
+                // hide
+                element.hide();
+
+            }
+        };
+    }
+);
+
 controlPanelDialogs.directive("deleteUserDialog", function ()
     {
         return {
@@ -46,6 +62,23 @@ controlPanelDialogs.directive("confirmationDialog", function ()
             restrict:'E',
             replace:true,
             templateUrl:"/controlpanel/views/confirmation-dialog.partial.html",
+            link:function (scope, element, attrs)
+            {
+                // hide
+                element.hide();
+
+            }
+        };
+    }
+);
+
+
+controlPanelDialogs.directive("addUserRoleDialog", function ()
+    {
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:"/controlpanel/views/add-user-role-dialog.partial.html",
             link:function (scope, element, attrs)
             {
                 // hide
