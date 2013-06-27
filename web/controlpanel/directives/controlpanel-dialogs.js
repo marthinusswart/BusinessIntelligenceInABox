@@ -88,3 +88,19 @@ controlPanelDialogs.directive("addUserRoleDialog", function ()
         };
     }
 );
+
+controlPanelDialogs.directive("deleteUserRoleDialog", function ()
+    {
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:"/controlpanel/views/delete-user-role-dialog.partial.html",
+            link:function (scope, element, attrs)
+            {
+                // hide
+                element.hide();
+
+            }
+        };
+    }
+);

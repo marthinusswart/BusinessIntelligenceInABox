@@ -20,6 +20,7 @@ controlPanelModule.controller("controlPanelController",
         $scope.deleteRoleDialogId = "#deleteRoleDialog";
         $scope.confirmationDialogId = "#confirmationDialog";
         $scope.addUserRoleDialog = "#addUserRoleDialog";
+        $scope.deleteUserRoleDialog = "#deleteUserRoleDialog";
         $scope.tabsId = "#tabs";
         $scope.deletedCompanies = [];
         $scope.deletedUsers = [];
@@ -199,6 +200,35 @@ controlPanelModule.controller("controlPanelController",
 
         }
 
+        $scope.deleteUserRole = function ()
+        {
+            $scope.roleToDelete = $scope.userRole;
+
+            $($scope.deleteUserRoleDialog).show();
+            $($scope.deleteUserRoleDialog).dialog(
+                {
+                    resizable:false,
+                    height:200,
+                    modal:true,
+                    buttons:{
+                        Delete:function ()
+                        {
+                            $(this).dialog("close");
+                            $scope.removeFromArray($scope.userRole, $scope.user.fullRoles);
+                            $scope.userRole = $scope.user.fullRoles[0];
+                            $scope.user.isDirty = true;
+                            $scope.$apply();
+                        },
+                        Cancel:function ()
+                        {
+                            $(this).dialog("close");
+                        }
+                    }
+                }
+            );
+
+        }
+
         $scope.confirmTabNavigation = function (title, message)
         {
             $scope.confirmationmessage = message;
@@ -310,6 +340,7 @@ controlPanelModule.controller("controlPanelController",
                 {
                     $scope.users = reply;
                     $scope.user = $scope.users[0];
+                    $scope.userRole = $scope.user.fullRoles[0];
                 }
             );
         }

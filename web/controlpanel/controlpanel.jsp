@@ -34,7 +34,7 @@
     <h1>Business Intelligence in a Box Control Panel</h1>
 
     <div id="tabs"
-         style="position: absolute;top: 100px;bottom: 10px;left:10px;right: 10px;min-width: 950px;min-height:500px;">
+         style="position: absolute;top: 100px;bottom: 10px;left:10px;right: 10px;min-width: 900px;min-height:500px;">
         <ul>
             <li><a href="#companyTab">Company Management</a></li>
             <li><a href="#userTab">User Management</a></li>
@@ -50,16 +50,15 @@
                     <p align="right">Company is dirty = {{company.isDirty}} Companies is dirty = {{companies.isDirty}}, SessionId = {{sessionId}} </p>
                 </div>
             </div>
-            <div id="company-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
+            <div id="company-listbox-div" class="listbox">
                 <select id="company-list" ng-model="company"
                         ng-options="obj.name for obj in companies" size="10"
                         class="fill styled">
                 </select>
 
             </div>
-            <div id="company-detail" class="main-content"
-                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
-                <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
+            <div id="company-detail" class="main-content">
+                <div class="left-area">
                     Company Name:
                     <div><input type="text" class="fill rounded-border" ng-model="company.name"
                                 ng-change="company.isDirty=true"></div>
@@ -88,7 +87,7 @@
                     <div><input type="text" class="fill rounded-border" ng-model="company.contactInfo.businessEmail"
                                 ng-change="company.isDirty=true"></div>
                 </div>
-                <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+                <div class="right-area">
                     Physical Address:
                     <div><textarea type="text" class="fill rounded-border"
                                    ng-model="company.contactInfo.physicalAddress" ng-change="company.isDirty=true"
@@ -112,7 +111,7 @@
                     <p align="right">User is dirty = {{user.isDirty}} Users is dirty = {{users.isDirty}}</p></div>
 
             </div>
-            <div id="user-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
+            <div id="user-listbox-div" class="listbox">
                 <select id="user-list" ng-model="user"
                         ng-options="obj.email for obj in users" size="10"
                         ng-change="userChanged()"
@@ -120,9 +119,8 @@
                 </select>
 
             </div>
-            <div id="user-detail" class="main-content"
-                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
-                <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
+            <div id="user-detail" class="main-content">
+                <div class="left-area">
                     Firstname:
                     <div><input type="text" class="fill rounded-border" ng-model="user.firstname"
                                 ng-change="user.isDirty=true"></div>
@@ -139,7 +137,7 @@
                     <div><input type="password" class="fill rounded-border" ng-model="user.password"
                                 ng-change="user.isDirty=true"></div>
                 </div>
-                <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+                <div class="right-area">
 
                     Roles:
                     <div id="user-roles-toolbar" class="rounded-border"
@@ -168,16 +166,15 @@
                     <p align="right">Role is dirty = {{role.isDirty}} Roles is dirty = {{roles.isDirty}}</p></div>
 
             </div>
-            <div id="role-listbox-div" style="position:absolute;top:100px;bottom:10px;left:10px;width: 250px;">
+            <div id="role-listbox-div" class="listbox">
                 <select id="role-list" ng-model="role"
                         ng-options="obj.name for obj in roles" size="10"
                         class="fill styled">
                 </select>
 
             </div>
-            <div id="role-detail" class="main-content"
-                 style="position: absolute;top:100px;bottom:10px;left:270px;right:10px;">
-                <div style="position: absolute;width: 350px;top:10px;bottom: 10px;left:10px;">
+            <div id="role-detail" class="main-content">
+                <div class="left-area">
                     Name:
                     <div><input type="text" class="fill rounded-border" ng-model="role.name"
                                 ng-change="role.isDirty=true"></div>
@@ -188,19 +185,20 @@
                                   ng-model="role.description" ng-change="role.isDirty=true"
                                   style="height: 100px;"></textarea>
                     </div>
-                    <div style="position: absolute;left:370px;width:350px;top:10px;bottom: 10px;right:10px;">
+                    <div class="right-area">
                     </div>
 
                 </div>
             </div>
         </div>
-        <delete-company-dialog></delete-company-dialog>
-        <delete-role-dialog></delete-role-dialog>
-        <delete-user-dialog></delete-user-dialog>
-        <confirmation-dialog></confirmation-dialog>
-        <add-user-role-dialog></add-user-role-dialog>
 
         <initialise comment="Initialise all the different controls that need the DOM to be available first">
+            <delete-company-dialog></delete-company-dialog>
+            <delete-role-dialog></delete-role-dialog>
+            <delete-user-dialog></delete-user-dialog>
+            <confirmation-dialog></confirmation-dialog>
+            <add-user-role-dialog></add-user-role-dialog>
+            <delete-user-role-dialog></delete-user-role-dialog>
 
             <jq-button button-id="saveCompanyButton"></jq-button>
             <jq-button button-id="deleteCompanyButton"></jq-button>

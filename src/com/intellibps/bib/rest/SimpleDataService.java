@@ -8,6 +8,7 @@ package com.intellibps.bib.rest;
  * To change this template use File | Settings | File Templates.
  */
 
+import com.google.appengine.api.datastore.Key;
 import com.google.gson.reflect.TypeToken;
 import com.intellibps.bib.customer.Company;
 import com.intellibps.bib.persistence.PersistenceController;
@@ -288,16 +289,21 @@ public class SimpleDataService
                         logger.info("Updating User - Kind: " + psUser.id().getKind() + " Id: " + psUser.id().getId());
                         psUser.copyFrom(user);
 
-                        logger.info("Adding User Roles");
+                        logger.info("Adding User Roles, current role count: " + psUser.roles().size());
+                        psUser.roles().clear();
+
+
                         Iterator<Role> roleIterator = user.fullRoles().iterator();
                         while (roleIterator.hasNext())
                         {
                             Role role = roleIterator.next();
                             Role psRole = persistenceManager.getObjectById(Role.class, role.id().getId());
                             logger.info("Adding User Role: " + psRole.id());
-                            psUser.roles().add(psRole.id());
                         }
 
+
+
+                        logger.info("Added User Roles, current role count: " + psUser.roles().size());
                         persistenceManager.makePersistent(psUser);
                         logger.info("Saved User - Kind: " + user.id().getKind() + " Id: " + user.id().getId());
 
@@ -308,9 +314,12 @@ public class SimpleDataService
 
             } finally
             {
+                logger.info("Closing persistence manager");
                 persistenceManager.close();
+
             }
 
+            logger.info("Load users");
             users = loadUsers(Long.parseLong(companyId));
             result = gson.toJson(users);
 
