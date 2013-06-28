@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90b44866-c973-409a-b043-ab1cd30314f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jasypt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" afterPath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/User.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js" afterPath="$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" afterPath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/css/default.css" afterPath="$PROJECT_DIR$/web/controlpanel/css/default.css" />
     </list>
     <ignored path="business-intelligence-in-a-box.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -928,7 +918,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added role management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added status bar and logout functionality" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -948,6 +938,7 @@
     <MESSAGE value="Added user admin support phase 1" />
     <MESSAGE value="Added user admin support finished" />
     <MESSAGE value="Added role management" />
+    <MESSAGE value="Added status bar and logout functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
