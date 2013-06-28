@@ -62,6 +62,10 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
                     request.getRequestDispatcher("controlpanel/login.jsp").include(request, response);
                 }
             }
+            else if (request.getParameter("init").equals("encrypt"))
+            {
+                sessionManager.encryptDefaultUserPassword();
+            }
         }
         else
         if (!sessionManager.isLoggedIn(webHelper.getSessionId(request.getCookies())))

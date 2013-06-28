@@ -260,6 +260,12 @@ controlPanelModule.controller("controlPanelController",
                 }
             );
         }
+
+        $scope.logout = function()
+        {
+            delete $cookies["sessionid"];
+            location.reload();
+        }
         /*************************************
          *          REST Services
          *************************************/

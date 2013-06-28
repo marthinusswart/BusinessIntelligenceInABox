@@ -4,6 +4,8 @@ import com.google.appengine.api.memcache.Expiration;
 import com.google.appengine.api.memcache.MemcacheService;
 import com.google.appengine.api.memcache.MemcacheServiceFactory;
 import com.intellibps.bib.persistence.PersistenceController;
+import org.jasypt.exceptions.EncryptionOperationNotPossibleException;
+import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -63,6 +65,7 @@ public class SessionManager
 
         PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE email == :email");
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
 
         try
         {
@@ -71,8 +74,9 @@ public class SessionManager
             if (results.size() > 0)
             {
                 User user = results.get(0);
-                if (user.password().equals(password))
+                if (passwordEncryptor.checkPassword(password, user.password()))
                 {
+
                     Credentials credentials = new Credentials();
                     credentials.email(user.email());
                     credentials.loginTime(new Date(System.currentTimeMillis()));
@@ -87,11 +91,17 @@ public class SessionManager
                 }
             }
         }
+        catch (EncryptionOperationNotPossibleException ex)
+        {
+           result = null;
+        }
 
         finally
         {
             persistenceManager.close();
         }
+
+
 
 
         return result;
@@ -123,6 +133,36 @@ public class SessionManager
                 Role persistedRole = persistenceManager.makePersistent(role);
 
                 user.roles().add(persistedRole.id());
+                persistenceManager.makePersistent(user);
+
+                result = true;
+            }
+        }
+
+        finally
+        {
+            persistenceManager.close();
+        }
+
+        return result;
+    }
+
+    public boolean encryptDefaultUserPassword()
+    {
+        boolean result = false;
+
+        PersistenceManager persistenceManager = PersistenceController.persistenceManagerFactory().getPersistenceManager();
+        Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.security.User WHERE email == :email");
+
+
+        try
+        {
+            List<User> results = (List<User>) query.execute("marthinus.swart@intellibps.com");
+
+            if (results.size() ==  1)
+            {
+                User user = results.get(0);
+                user.encryptPassword();
                 persistenceManager.makePersistent(user);
 
                 result = true;

@@ -299,9 +299,8 @@ public class SimpleDataService
                             Role role = roleIterator.next();
                             Role psRole = persistenceManager.getObjectById(Role.class, role.id().getId());
                             logger.info("Adding User Role: " + psRole.id());
+                            psUser.roles().add(psRole.id());
                         }
-
-
 
                         logger.info("Added User Roles, current role count: " + psUser.roles().size());
                         persistenceManager.makePersistent(psUser);

@@ -2,6 +2,7 @@ package com.intellibps.bib.security;
 
 import com.google.appengine.api.datastore.Key;
 import com.intellibps.bib.customer.ContactInfo;
+import org.jasypt.util.password.StrongPasswordEncryptor;
 
 import javax.jdo.annotations.*;
 import java.util.ArrayList;
@@ -173,6 +174,18 @@ public class User
     public void roles(ArrayList<Role> roles)
     {
         this.fullRoles = fullRoles;
+    }
+
+    public String encrypt(String password)
+    {
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+        String encryptedPassword = passwordEncryptor.encryptPassword(password);
+        return encryptedPassword;
+    }
+
+    public void encryptPassword()
+    {
+        password(encrypt(password()));
     }
 
 }

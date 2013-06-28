@@ -34,7 +34,7 @@
     <h1>Business Intelligence in a Box Control Panel</h1>
 
     <div id="tabs"
-         style="position: absolute;top: 100px;bottom: 10px;left:10px;right: 10px;min-width: 900px;min-height:500px;">
+         class="main-tabs">
         <ul>
             <li><a href="#companyTab">Company Management</a></li>
             <li><a href="#userTab">User Management</a></li>
@@ -46,9 +46,7 @@
                 <button id="addCompanyButton" class="toolbar-button" ng-click="addCompany()" style="margin-left: 5px;">Add</button>
                 <button id="deleteCompanyButton" class="toolbar-button" ng-click="deleteCompany()">Delete</button>
                 <button id="saveCompanyButton" class="toolbar-button" ng-click="saveCompanies()">Save</button>
-                <div style="position: absolute;left:300px;top:2px;right: 10px;">
-                    <p align="right">Company is dirty = {{company.isDirty}} Companies is dirty = {{companies.isDirty}}, SessionId = {{sessionId}} </p>
-                </div>
+
             </div>
             <div id="company-listbox-div" class="listbox">
                 <select id="company-list" ng-model="company"
@@ -99,6 +97,14 @@
                 </div>
 
             </div>
+            <div id="company-status-bar" class="status-bar rounded-border">
+                <div style="position: absolute;left:5px;width: 200px;">
+                    <button id="logoutButton" class="toolbar-button" ng-click="logout()">Logout</button>
+                </div>
+                <div style="position: absolute;left:300px;top:2px;right: 10px;">
+                    <p align="right">Company is dirty = {{company.isDirty}} Companies is dirty = {{companies.isDirty}}, SessionId = {{sessionId}} </p>
+                </div>
+            </div>
 
         </div>
         <div id="userTab">
@@ -107,8 +113,7 @@
                 <button id="addUserButton" class="toolbar-button" ng-click="addUser()" style="margin-left: 5px;">Add</button>
                 <button id="deleteUserButton" class="toolbar-button" ng-click="deleteUser()">Delete</button>
                 <button id="saveUserButton" class="toolbar-button" ng-click="saveSelectedCompanyUsers()">Save</button>
-                <div style="position: absolute;left:300px;top:2px;right: 10px;">
-                    <p align="right">User is dirty = {{user.isDirty}} Users is dirty = {{users.isDirty}}</p></div>
+
 
             </div>
             <div id="user-listbox-div" class="listbox">
@@ -155,6 +160,10 @@
                 </div>
 
             </div>
+            <div id="users-status-bar" class="status-bar rounded-border">
+                <div style="position: absolute;left:300px;top:2px;right: 10px;">
+                    <p align="right">User is dirty = {{user.isDirty}} Users is dirty = {{users.isDirty}}</p></div>
+            </div>
         </div>
         <div id="roleTab">
             <div id="role-toolbar" class="ui-state-active ui-corner-all"
@@ -162,8 +171,7 @@
                 <button id="addRoleButton" class="toolbar-button" ng-click="addRole()" style="margin-left: 5px;">Add</button>
                 <button id="deleteRoleButton" class="toolbar-button" ng-click="deleteRole()">Delete</button>
                 <button id="saveRoleButton" class="toolbar-button" ng-click="saveRoles()">Save</button>
-                <div style="position: absolute;left:300px;top:2px;right: 10px;">
-                    <p align="right">Role is dirty = {{role.isDirty}} Roles is dirty = {{roles.isDirty}}</p></div>
+
 
             </div>
             <div id="role-listbox-div" class="listbox">
@@ -190,6 +198,10 @@
 
                 </div>
             </div>
+            <div id="roles-status-bar" class="status-bar rounded-border">
+                <div style="position: absolute;left:300px;top:2px;right: 10px;">
+                    <p align="right">Role is dirty = {{role.isDirty}} Roles is dirty = {{roles.isDirty}}</p></div>
+            </div>
         </div>
 
         <initialise comment="Initialise all the different controls that need the DOM to be available first">
@@ -211,6 +223,7 @@
             <jq-button button-id="addRoleButton"></jq-button>
             <jq-button button-id="addUserRoleButton"></jq-button>
             <jq-button button-id="deleteUserRoleButton"></jq-button>
+            <jq-button button-id="logoutButton"></jq-button>
             <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
         </initialise>
 
