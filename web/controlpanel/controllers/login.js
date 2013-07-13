@@ -9,6 +9,13 @@ loginModule.controller("loginController",
 
             $scope.doLogin = function()
             {
+                $("#action").val("login");
+                $("#login-form").submit();
+            }
+
+            $scope.changePassword = function()
+            {
+                $("#action").val("changepwd");
                 $("#login-form").submit();
             }
         }

@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90b44866-c973-409a-b043-ab1cd30314f2" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/report/Report.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/report/ReportType.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/controlpanel/change-pwd.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/controlpanel/controllers/change-pwd.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/controlpanel/models/ReportType.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/controlpanel/models/report.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/controlpanel/views/add-report-role-dialog.partial.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js" afterPath="$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controllers/login.js" afterPath="$PROJECT_DIR$/web/controlpanel/controllers/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" afterPath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/css/default.css" afterPath="$PROJECT_DIR$/web/controlpanel/css/default.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js" afterPath="$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/login.jsp" afterPath="$PROJECT_DIR$/web/controlpanel/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/models/user.js" afterPath="$PROJECT_DIR$/web/controlpanel/models/user.js" />
     </list>
     <ignored path="business-intelligence-in-a-box.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,86 +77,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleDataService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
+      <file leaf-file-name="company.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/models/company.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="320" column="33" selection-start="11740" selection-end="11740" vertical-scroll-proportion="0.0">
+            <state line="7" column="55" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controlpanel.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="230" column="82" selection-start="7644" selection-end="7644" vertical-scroll-proportion="0.115384616">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-ui.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/directives/jquery-ui.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="14" selection-start="329" selection-end="357" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/controlpanel/css/default.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="64" selection-start="1635" selection-end="1635" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="controlpanel.jsp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controlpanel.jsp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/controlpanel/controlpanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="37" selection-start="1334" selection-end="1334" vertical-scroll-proportion="-18.75">
+            <state line="244" column="78" selection-start="12466" selection-end="12466" vertical-scroll-proportion="0.48224512">
               <folding>
-                <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-                <element signature="tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#1;tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#2;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="tag#div#0;tag#div#3;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
+      <file leaf-file-name="controlpanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="7" selection-start="3463" selection-end="3618" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="64" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControlPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="47" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0">
+            <state line="495" column="68" selection-start="16178" selection-end="16178" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,8 +113,66 @@
       <file leaf-file-name="controlpanel-dialogs.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="51" selection-start="2133" selection-end="2153" vertical-scroll-proportion="0.0">
+            <state line="110" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-user-role-dialog.partial.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/views/add-user-role-dialog.partial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="275" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-report-role-dialog.partial.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/views/add-report-role-dialog.partial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="33" selection-start="238" selection-end="238" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Report.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/report/Report.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="41" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="51" column="8" selection-start="1275" selection-end="1380" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/models/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="9" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/models/report.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="52" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#157#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,22 +187,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/controlpanel/views/delete-user-dialog.html" />
-        <option value="$PROJECT_DIR$/web/controlpanel/views/delete-user-dialog.partial.html" />
-        <option value="$PROJECT_DIR$/web/controlpanel/models/role.js" />
-        <option value="$PROJECT_DIR$/web/controlpanel/views/delete-role-dialog.partial.html" />
-        <option value="$PROJECT_DIR$/web/controlpanel/models/user.js" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/Role.java" />
-        <option value="$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js" />
-        <option value="$PROJECT_DIR$/web/controlpanel/views/delete-user-role-dialog.partial.html" />
-        <option value="$PROJECT_DIR$/web/controlpanel/views/add-user-role-dialog.partial.html" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/User.java" />
+        <option value="$PROJECT_DIR$/web/controlpanel/controllers/login.js" />
+        <option value="$PROJECT_DIR$/web/controlpanel/change-pwd.jsp" />
+        <option value="$PROJECT_DIR$/web/controlpanel/controllers/change-pwd.js" />
+        <option value="$PROJECT_DIR$/web/controlpanel/login.jsp" />
         <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
-        <option value="$PROJECT_DIR$/web/controlpanel/css/default.css" />
-        <option value="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/report/ReportType.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" />
+        <option value="$PROJECT_DIR$/web/controlpanel/models/ReportType.js" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/report/Report.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java" />
+        <option value="$PROJECT_DIR$/web/controlpanel/views/add-report-role-dialog.partial.html" />
+        <option value="$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js" />
+        <option value="$PROJECT_DIR$/web/controlpanel/models/user.js" />
+        <option value="$PROJECT_DIR$/web/controlpanel/models/report.js" />
         <option value="$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js" />
+        <option value="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" />
       </list>
     </option>
   </component>
@@ -392,28 +415,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlpanel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -451,6 +452,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -538,6 +543,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -561,20 +588,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="customer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -642,8 +655,8 @@
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -696,24 +709,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="JettyConfiguration" factoryName="Local">
       <deployment />
       <server-settings>
@@ -735,13 +730,21 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
       <method>
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -775,6 +778,16 @@
       <method>
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -868,10 +881,10 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24945888" sideWeight="0.5133405" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19978106" sideWeight="0.4610459" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19923371" sideWeight="0.46531484" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329863" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19978106" sideWeight="0.5314835" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40010947" sideWeight="0.83457845" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19923371" sideWeight="0.5272145" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40010947" sideWeight="0.83457845" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -944,107 +957,134 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/company.js">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/report/ReportType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="407" selection-end="445" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="9" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/delete-user-role-dialog.partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="59" selection-start="59" selection-end="59" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/delete-user-dialog.partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="45" selection-start="88" selection-end="93" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="33" column="54" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/add-user-role-dialog.partial.html">
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/ReportType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="51" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="51" selection-start="2133" selection-end="2153" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="320" column="33" selection-start="11740" selection-end="11740" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="7" column="36" selection-start="194" selection-end="194" vertical-scroll-proportion="0.01986755">
+          <folding>
+            <element signature="e#0#157#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="47" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="64" selection-start="4914" selection-end="4914" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="7" selection-start="3463" selection-end="3618" vertical-scroll-proportion="0.0">
+        <state line="64" column="57" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.41538462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controlpanel/css/default.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="64" selection-start="1635" selection-end="1635" vertical-scroll-proportion="0.0">
+        <state line="102" column="3" selection-start="1441" selection-end="1441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="302" column="29" selection-start="10752" selection-end="11223" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="60" selection-start="6757" selection-end="6757" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1937#1945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/company.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="55" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/add-user-role-dialog.partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="275" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/add-report-role-dialog.partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="33" selection-start="238" selection-end="238" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="34" selection-start="2596" selection-end="2596" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="8" selection-start="1275" selection-end="1380" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="9" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/models/report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="52" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/report/Report.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="41" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="495" column="68" selection-start="16178" selection-end="16178" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/controlpanel/controlpanel.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="37" selection-start="1334" selection-end="1334" vertical-scroll-proportion="-18.75">
+        <state line="244" column="78" selection-start="12466" selection-end="12466" vertical-scroll-proportion="0.48224512">
           <folding>
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#1;tag#div#2;tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#2;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="tag#div#0;tag#div#3;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/directives/jquery-ui.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="14" selection-start="329" selection-end="357" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="230" column="82" selection-start="7644" selection-end="7644" vertical-scroll-proportion="0.115384616">
-          <folding />
         </state>
       </provider>
     </entry>

@@ -1,8 +1,12 @@
 package com.intellibps.bib.customer;
 
 import com.google.appengine.api.datastore.Key;
+import com.intellibps.bib.report.Report;
 
 import javax.jdo.annotations.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,12 +31,22 @@ public class Company
     private String country;
     @Persistent(defaultFetchGroup="true")
     private ContactInfo contactInfo = new ContactInfo();
+    @Persistent
+    private Set<Key> reports;
     @NotPersistent
     private boolean isNew = false;
     @NotPersistent
     private boolean isDirty = false;
     @NotPersistent
     private boolean isDeleted = false;
+    @NotPersistent
+    private ArrayList<Report> fullReports;
+
+    public Company()
+    {
+        reports(new HashSet<Key>());
+        fullReports(new ArrayList<Report>());
+    }
 
     public void name(String name)
     {
@@ -124,6 +138,7 @@ public class Company
         this.contactInfo.copyFrom(company.contactInfo);
         this.country = company.country;
         this.name = company.name;
+        this.reports(company.reports());
 
     }
 
@@ -135,5 +150,25 @@ public class Company
     public void isDeleted(boolean deleted)
     {
         isDeleted = deleted;
+    }
+
+    public Set<Key> reports()
+    {
+        return reports;
+    }
+
+    public void reports(Set<Key> reports)
+    {
+        this.reports = reports;
+    }
+
+    public ArrayList<Report> fullReports()
+    {
+        return fullReports;
+    }
+
+    public void fullReports(ArrayList<Report> fullReports)
+    {
+        this.fullReports = fullReports;
     }
 }

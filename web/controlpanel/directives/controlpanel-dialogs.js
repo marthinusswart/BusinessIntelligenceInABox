@@ -104,3 +104,19 @@ controlPanelDialogs.directive("deleteUserRoleDialog", function ()
         };
     }
 );
+
+controlPanelDialogs.directive("addReportRoleDialog", function ()
+    {
+        return {
+            restrict:'E',
+            replace:true,
+            templateUrl:"/controlpanel/views/add-report-role-dialog.partial.html",
+            link:function (scope, element, attrs)
+            {
+                // hide
+                element.hide();
+
+            }
+        };
+    }
+);

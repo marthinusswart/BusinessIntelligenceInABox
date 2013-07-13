@@ -38,14 +38,19 @@
             <div class="normal-margin"><input type="password" ng-model="password" class="fill" name="password"
                                               id="password"></div>
             <div class="align-right">
-                <button ng-click="doLogin();" text="{{loginButtonTitle}}" id="loginButton">Login</button>
+                <button type="submit" ng-click="doLogin();" id="loginButton">Login</button>
             </div>
+            <div class="align-left">
+                <button type="button" ng-click="changePassword();" id="changePwdButton">Change Password</button>
+            </div>
+
         </div>
     </div>
     <input type="hidden" value="login" name="action" id="action">
 </form>
 <initialise comment="Initialise all the different controls that need the DOM to be available first">
     <jq-button button-id="loginButton"></jq-button>
+    <jq-button button-id="changePwdButton"></jq-button>
 </initialise>
 </body>
 </html>

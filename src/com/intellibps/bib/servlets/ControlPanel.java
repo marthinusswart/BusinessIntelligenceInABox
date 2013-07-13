@@ -28,6 +28,12 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
         {
             doLogin(request,response);
         }
+        else if ((action != null) && (action.equals("changepwd")))
+        {
+            //changePasswordProcess()
+            request.getRequestDispatcher("controlpanel/change-pwd.jsp").include(request, response);
+
+        }
         else
         {
             PrintWriter printWriter = response.getWriter();
@@ -80,6 +86,24 @@ public class ControlPanel extends javax.servlet.http.HttpServlet
     }
 
     private void doLogin(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response)  throws  javax.servlet.ServletException, IOException
+    {
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String sessionId = sessionManager.login(email, password);
+        if (sessionId == null)
+        {
+            request.getRequestDispatcher("controlpanel/login.jsp").include(request, response);
+        }
+        else
+        {
+            Cookie cookie = new Cookie("sessionid", sessionId);
+            response.addCookie(cookie);
+            response.sendRedirect("/cpanel");
+            //request.getRequestDispatcher("controlpanel/controlpanel.jsp").include(request, response);
+        }
+    }
+
+    private void changePassword(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response)  throws  javax.servlet.ServletException, IOException
     {
         String email = request.getParameter("email");
         String password = request.getParameter("password");

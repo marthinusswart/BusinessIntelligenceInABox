@@ -23,6 +23,7 @@
     <script type="text/javascript" src="/controlpanel/models/company.js"></script>
     <script type="text/javascript" src="/controlpanel/models/user.js"></script>
     <script type="text/javascript" src="/controlpanel/models/role.js"></script>
+    <script type="text/javascript" src="/controlpanel/models/report.js"></script>
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>
     <script type="text/javascript" src="controlpanel/directives/controlpanel-dialogs.js"></script>
     <script type="text/javascript" src="/controlpanel/controllers/controlpanel.js"></script>
@@ -39,6 +40,7 @@
             <li><a href="#companyTab">Company Management</a></li>
             <li><a href="#userTab">User Management</a></li>
             <li><a href="#roleTab">Role Management</a></li>
+            <li><a href="#reportTab">Report Management</a></li>
         </ul>
         <div id="companyTab">
             <div id="company-toolbar" class="ui-state-active ui-corner-all"
@@ -203,6 +205,61 @@
                     <p align="right">Role is dirty = {{role.isDirty}} Roles is dirty = {{roles.isDirty}}</p></div>
             </div>
         </div>
+        <div id="reportTab">
+            <div id="report-toolbar" class="ui-state-active ui-corner-all"
+                 style="position:absolute;left:10px;right:10px;">
+                <button id="addReportButton" class="toolbar-button" ng-click="addReport()" style="margin-left: 5px;">Add</button>
+                <button id="deleteReportButton" class="toolbar-button" ng-click="deleteRole()">Delete</button>
+                <button id="saveReportButton" class="toolbar-button" ng-click="saveSelectedCompanyReports()">Save</button>
+
+
+            </div>
+            <div id="report-listbox-div" class="listbox">
+                <select id="report-list" ng-model="report"
+                        ng-options="obj.name for obj in reports" size="10"
+                        class="fill styled">
+                </select>
+
+            </div>
+            <div id="report-detail" class="main-content">
+                <div class="left-area">
+                    Name:
+                    <div><input type="text" class="fill rounded-border" ng-model="report.name"
+                                ng-change="report.isDirty=true"></div>
+                    <p></p>
+                    Description:
+                    <div>
+                        <textarea type="text" class="fill rounded-border"
+                                  ng-model="report.description" ng-change="report.isDirty=true"
+                                  style="height: 75px;"></textarea>
+                    </div>
+                    <p></p>
+                    Report Url:
+                    <div><input type="text" class="fill rounded-border" ng-model="report.reportUrl"
+                                ng-change="report.isDirty=true"></div>
+
+
+                </div>
+                <div class="right-area">
+                    Access Control:
+                    <div id="report-roles-toolbar" class="rounded-border"
+                            >
+                        <select id="report-role-list" ng-model="reportRole"
+                                ng-options="obj.name for obj in report.fullRoles" size="10"
+                                class="fill styled-inner-border"
+                                style="height: 95px;">
+                        </select>
+
+                        <button id="addReportRoleButton" class="toolbar-button" ng-click="addReportRole()" style="margin-left: 5px;">Add</button>
+                        <button id="deleteReportRoleButton" class="toolbar-button" ng-click="deleteReportRole()">Delete</button>
+                    </div>
+                </div>
+            </div>
+            <div id="reports-status-bar" class="status-bar rounded-border">
+                <div style="position: absolute;left:300px;top:2px;right: 10px;">
+                    <p align="right">Report is dirty = {{report.isDirty}} Reports is dirty = {{reports.isDirty}}</p></div>
+            </div>
+        </div>
 
         <initialise comment="Initialise all the different controls that need the DOM to be available first">
             <delete-company-dialog></delete-company-dialog>
@@ -211,6 +268,7 @@
             <confirmation-dialog></confirmation-dialog>
             <add-user-role-dialog></add-user-role-dialog>
             <delete-user-role-dialog></delete-user-role-dialog>
+            <add-report-role-dialog></add-report-role-dialog>
 
             <jq-button button-id="saveCompanyButton"></jq-button>
             <jq-button button-id="deleteCompanyButton"></jq-button>
@@ -224,6 +282,11 @@
             <jq-button button-id="addUserRoleButton"></jq-button>
             <jq-button button-id="deleteUserRoleButton"></jq-button>
             <jq-button button-id="logoutButton"></jq-button>
+            <jq-button button-id="saveReportButton"></jq-button>
+            <jq-button button-id="deleteReportButton"></jq-button>
+            <jq-button button-id="addReportButton"></jq-button>
+            <jq-button button-id="addReportRoleButton"></jq-button>
+            <jq-button button-id="deleteReportRoleButton"></jq-button>
             <jq-tabs tabs-id="tabs" before-activate-callback="functionRetriever('tabSelect')"></jq-tabs>
         </initialise>
 
