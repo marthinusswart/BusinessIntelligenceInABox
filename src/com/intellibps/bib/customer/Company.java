@@ -31,8 +31,10 @@ public class Company
     private String country;
     @Persistent(defaultFetchGroup="true")
     private ContactInfo contactInfo = new ContactInfo();
-    @Persistent
+    @Persistent(defaultFetchGroup="true")
     private Set<Key> reports;
+    @Persistent
+    private String companyCode;
     @NotPersistent
     private boolean isNew = false;
     @NotPersistent
@@ -138,8 +140,7 @@ public class Company
         this.contactInfo.copyFrom(company.contactInfo);
         this.country = company.country;
         this.name = company.name;
-        this.reports(company.reports());
-
+        this.companyCode = company.companyCode;
     }
 
     public boolean isDeleted()
@@ -170,5 +171,15 @@ public class Company
     public void fullReports(ArrayList<Report> fullReports)
     {
         this.fullReports = fullReports;
+    }
+
+    public String companyCode()
+    {
+        return companyCode;
+    }
+
+    public void companyCode(String companyCode)
+    {
+        this.companyCode = companyCode;
     }
 }

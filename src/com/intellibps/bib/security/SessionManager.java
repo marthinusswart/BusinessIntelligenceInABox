@@ -101,9 +101,6 @@ public class SessionManager
             persistenceManager.close();
         }
 
-
-
-
         return result;
     }
 
@@ -180,6 +177,11 @@ public class SessionManager
     private String nextSessionId()
     {
         return new BigInteger(130, secureRandom).toString(32);
+    }
+
+    public Credentials credentials(String sessionId)
+    {
+        return (Credentials) memcacheService.get(sessionId);
     }
 
 }

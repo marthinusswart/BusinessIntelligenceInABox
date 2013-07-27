@@ -10,10 +10,21 @@
         <servlet-name>ControlPanel</servlet-name>
         <servlet-class>com.intellibps.bib.servlets.ControlPanel</servlet-class>
     </servlet>
+
+    <servlet>
+        <display-name>Business Intelligence in a Box Main</display-name>
+        <servlet-name>BiBMain</servlet-name>
+        <servlet-class>com.intellibps.bib.servlets.BiBMain</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>ControlPanel</servlet-name>
         <url-pattern>/cpanel</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>BiBMain</servlet-name>
+        <url-pattern>/main</url-pattern>
     </servlet-mapping>
 
     <!-- Auto scan REST service -->

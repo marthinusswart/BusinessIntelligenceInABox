@@ -86,6 +86,10 @@
                     Business Email:
                     <div><input type="text" class="fill rounded-border" ng-model="company.contactInfo.businessEmail"
                                 ng-change="company.isDirty=true"></div>
+                    <p></p>
+                    Company Code:
+                    <div><input type="text" class="fill rounded-border" ng-model="company.companyCode"
+                                ng-change="company.isDirty=true"></div>
                 </div>
                 <div class="right-area">
                     Physical Address:

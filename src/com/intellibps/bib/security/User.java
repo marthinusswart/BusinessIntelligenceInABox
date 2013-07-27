@@ -160,6 +160,7 @@ public class User
         if (!user.password.equals(User.DEFAULT_PASSWORD))
         {
             this.password = user.password;
+            this.encryptPassword();
         }
 
         this.roles(user.roles());
