@@ -2,25 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90b44866-c973-409a-b043-ab1cd30314f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/apache_poi.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dom4j.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedUploadJob.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/controllers/upload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/upload.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/views/upload.partial.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/main/views/upload.partial.jsp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" afterPath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main/controllers/landingarea.js" afterPath="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main/landingarea.jsp" afterPath="$PROJECT_DIR$/web/main/landingarea.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp" afterPath="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/web/main/views/report-navigation.jsp" afterPath="$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp" afterPath="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.html" />
     </list>
     <ignored path="business-intelligence-in-a-box.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,47 +67,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="upload.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/upload.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="73" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landing-area-navigation.partial.jsp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landingarea.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report-navigation.partial.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ReportDataService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="130" selection-start="1774" selection-end="1888" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="146" column="73" selection-start="4832" selection-end="4832" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2537#2545#0" expanded="true" />
+                <element signature="e#4280#4288#0" expanded="true" />
+                <element signature="e#4343#4351#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,34 +84,72 @@
       <file leaf-file-name="SimpleDataService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0">
+            <state line="207" column="23" selection-start="6893" selection-end="7265" vertical-scroll-proportion="-19.23077">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Credentials.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java">
+      <file leaf-file-name="PermissionManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="3" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+            <state line="35" column="66" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="landingarea.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="5" selection-start="1253" selection-end="1253" vertical-scroll-proportion="-23.75">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SessionManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
+      <file leaf-file-name="controlpanel.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/controlpanel.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="86" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
+            <state line="14" column="3" selection-start="416" selection-end="467" vertical-scroll-proportion="-8.75">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java">
+      <file leaf-file-name="landingarea.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/main/controllers/landingarea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="3" selection-start="518" selection-end="569" vertical-scroll-proportion="0.0">
+            <state line="23" column="63" selection-start="739" selection-end="739" vertical-scroll-proportion="0.25824177">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BiBMain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/BiBMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="56" column="64" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControlPanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="11" selection-start="2705" selection-end="2788" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controlpanel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="69" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,7 +158,7 @@
       <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="8" selection-start="8" selection-end="35" vertical-scroll-proportion="0.0">
+            <state line="19" column="13" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -178,14 +174,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/main/views/report-navigation.jsp" />
-        <option value="$PROJECT_DIR$/web/main/css/default.css" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp" />
         <option value="$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp" />
         <option value="$PROJECT_DIR$/web/main/views/upload.partial.jsp" />
-        <option value="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
         <option value="$PROJECT_DIR$/web/main/controllers/upload.js" />
         <option value="$PROJECT_DIR$/web/main/upload.jsp" />
         <option value="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJob.java" />
@@ -194,6 +185,11 @@
         <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
         <option value="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java" />
         <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java" />
+        <option value="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.html" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java" />
+        <option value="$PROJECT_DIR$/web/main/landingarea.jsp" />
+        <option value="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
       </list>
     </option>
   </component>
@@ -381,50 +377,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controlpanel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlpanel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controlpanel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -927,18 +879,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39381003" sideWeight="0.5046575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986301" sideWeight="0.50053364" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16542156" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19759168" sideWeight="0.47491995" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19759168" sideWeight="0.470651" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19704433" sideWeight="0.42049092" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329863" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19726028" sideWeight="0.5176094" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3065134" sideWeight="0.83457845" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19704433" sideWeight="0.5720384" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3065134" sideWeight="0.83457845" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32870865" sideWeight="0.4980822" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16542156" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -981,7 +933,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added report management" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the upload functionality" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1003,64 +955,15 @@
     <MESSAGE value="Added role management" />
     <MESSAGE value="Added status bar and logout functionality" />
     <MESSAGE value="Added report management" />
+    <MESSAGE value="Added the upload functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="62" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedUploadJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="28" selection-start="478" selection-end="493" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="59" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="29" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/persistence/PersistenceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="130" selection-start="1774" selection-end="1888" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="3" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="86" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="3" selection-start="518" selection-end="569" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="8" selection-end="35" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main/upload.jsp">
@@ -1077,23 +980,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp">
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/directives/controlpanel-dialogs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="61" selection-start="723" selection-end="723" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="32" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="13" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/ControlPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="11" selection-start="2705" selection-end="2788" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/BiBMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="64" selection-start="1983" selection-end="1983" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/controlpanel.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="3" selection-start="416" selection-end="467" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="207" column="23" selection-start="6893" selection-end="7265" vertical-scroll-proportion="-19.23077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="66" selection-start="982" selection-end="982" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="146" column="73" selection-start="4832" selection-end="4832" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2537#2545#0" expanded="true" />
+            <element signature="e#4280#4288#0" expanded="true" />
+            <element signature="e#4343#4351#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="38" column="5" selection-start="1253" selection-end="1253" vertical-scroll-proportion="-23.75">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp">
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/controllers/controlpanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="40" column="69" selection-start="1541" selection-end="1541" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main/controllers/landingarea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="63" selection-start="739" selection-end="739" vertical-scroll-proportion="0.25824177">
           <folding />
         </state>
       </provider>

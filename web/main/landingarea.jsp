@@ -13,6 +13,7 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-cookies.min.js"></script>
 
     <link rel="stylesheet" href="/css/ui-lightness/jquery-ui.css"
           type="text/css">
@@ -30,9 +31,12 @@
 <h1>Business Intelligence in a Box</h1>
 
 <div class="container ui-corner-all" ng-controller="landingAreaController">
-  <div class="left-area">
-      <jsp:include page="views/landing-area-navigation.partial.jsp"></jsp:include>
+    Reports: {{reports}}
+    <!--
+    <div class="left-area" ng-include src="navigation.url">
+
   </div>
+  -->
 </div>
 
 <initialise comment="Initialise all the different controls that need the DOM to be available first">
