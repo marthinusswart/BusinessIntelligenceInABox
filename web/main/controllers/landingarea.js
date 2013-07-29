@@ -9,11 +9,17 @@ var landingAreaModule = angular
     .module("landingAreaModule", ["jqComponents"])  ;
 
 landingAreaModule.controller("landingAreaController",
-    function($scope, $http)
+    function($scope, $http, $window)
     {
         $scope.loadReport = function(reportId)
         {
             console.info("Loading report " + reportId);
+        }
+
+        $scope.uploadData = function()
+        {
+            $window.location.href = "/main/upload.jsp";
+            //location.reload();
         }
     }
 )   ;

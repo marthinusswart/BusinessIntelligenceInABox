@@ -14,20 +14,13 @@ import java.util.Date;
 public class Credentials implements Serializable
 {
 
-    private Key key;
+    private com.google.appengine.api.datastore.Key companyId;
+    private com.google.appengine.api.datastore.Key userId;
     private String username = null;
     private String email = null;
     private Date loginTime = null;
 
-    public void key(Key key)
-    {
-        this.key = key;
-    }
 
-    public Key key()
-    {
-        return this.key;
-    }
 
     public void username(String username)
     {
@@ -57,6 +50,26 @@ public class Credentials implements Serializable
     public Date loginTime()
     {
         return this.loginTime;
+    }
+
+    public com.google.appengine.api.datastore.Key companyId()
+    {
+        return companyId;
+    }
+
+    public void companyId(com.google.appengine.api.datastore.Key companyId)
+    {
+        this.companyId = companyId;
+    }
+
+    public com.google.appengine.api.datastore.Key userId()
+    {
+        return userId;
+    }
+
+    public void userId(com.google.appengine.api.datastore.Key userId)
+    {
+        this.userId = userId;
     }
 }
 

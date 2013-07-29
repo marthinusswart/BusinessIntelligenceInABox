@@ -31,7 +31,7 @@
 
 <div class="container ui-corner-all" ng-controller="landingAreaController">
   <div class="left-area">
-      <jsp:include page="views/landing-area-navigation.jsp"></jsp:include>
+      <jsp:include page="views/landing-area-navigation.partial.jsp"></jsp:include>
   </div>
 </div>
 

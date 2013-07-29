@@ -20,10 +20,12 @@
         {
 %>
 
-<jsp:include page="report-navigation.jsp"></jsp:include>
+<jsp:include page="report-navigation.partial.jsp"></jsp:include>
 
 <%
         }
     }
 %>
+
+<jsp:include page="upload.partial.jsp"></jsp:include>
 

@@ -16,6 +16,18 @@
         <servlet-name>BiBMain</servlet-name>
         <servlet-class>com.intellibps.bib.servlets.BiBMain</servlet-class>
     </servlet>
+
+    <servlet>
+        <display-name>Uplaod File</display-name>
+        <servlet-name>Upload</servlet-name>
+        <servlet-class>com.intellibps.bib.servlets.Upload</servlet-class>
+    </servlet>
+
+    <servlet>
+        <display-name>Uploaded File</display-name>
+        <servlet-name>Uploaded</servlet-name>
+        <servlet-class>com.intellibps.bib.servlets.Uploaded</servlet-class>
+    </servlet>
     
     <servlet-mapping>
         <servlet-name>ControlPanel</servlet-name>
@@ -26,6 +38,18 @@
         <servlet-name>BiBMain</servlet-name>
         <url-pattern>/main</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Upload</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Uploaded</servlet-name>
+        <url-pattern>/uploaded</url-pattern>
+    </servlet-mapping>
+
+
 
     <!-- Auto scan REST service -->
     <context-param>
@@ -51,6 +75,7 @@
             org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
         </servlet-class>
     </servlet>
+
 
     <servlet-mapping>
         <servlet-name>resteasy-servlet</servlet-name>

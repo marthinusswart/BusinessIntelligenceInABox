@@ -2,23 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90b44866-c973-409a-b043-ab1cd30314f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/Permission.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/BiBMain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/carbon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/controllers/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/css/default.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/landingarea.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/views/report-navigation.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/apache_poi.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/dom4j.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedUploadJob.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/controllers/upload.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/upload.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/main/views/upload.partial.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/business_intelligence_in_a_box_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" afterPath="$PROJECT_DIR$/business-intelligence-in-a-box.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/intellibps/bib/security/User.java" afterPath="$PROJECT_DIR$/src/com/intellibps/bib/security/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" afterPath="$PROJECT_DIR$/web/controlpanel/controlpanel.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main/controllers/landingarea.js" afterPath="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main/landingarea.jsp" afterPath="$PROJECT_DIR$/web/main/landingarea.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp" afterPath="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/main/views/report-navigation.jsp" afterPath="$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp" />
     </list>
     <ignored path="business-intelligence-in-a-box.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,17 +78,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="landingarea.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
+      <file leaf-file-name="upload.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main/upload.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="6" selection-start="1121" selection-end="1189" vertical-scroll-proportion="-20.625">
+            <state line="20" column="73" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.5">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery-ui.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/directives/jquery-ui.js">
+      <file leaf-file-name="landing-area-navigation.partial.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -94,57 +96,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landingarea.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/main/controllers/landingarea.js">
+      <file leaf-file-name="landingarea.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="36" selection-start="467" selection-end="467" vertical-scroll-proportion="0.1978022">
-              <folding>
-                <element signature="e#0#157#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="landing-area-navigation.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="755" selection-end="811" vertical-scroll-proportion="-13.75">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report-navigation.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.jsp">
+      <file leaf-file-name="report-navigation.partial.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="44" selection-start="362" selection-end="362" vertical-scroll-proportion="-8.125">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/login.jsp">
+      <file leaf-file-name="ReportDataService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="39" selection-start="1010" selection-end="1025" vertical-scroll-proportion="-17.541666">
+            <state line="58" column="130" selection-start="1774" selection-end="1888" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/controllers/login.js">
+      <file leaf-file-name="SimpleDataService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="167" selection-end="259" vertical-scroll-proportion="0.0">
+            <state line="31" column="13" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="default.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/main/css/default.css">
+      <file leaf-file-name="Credentials.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="13" selection-start="1638" selection-end="1638" vertical-scroll-proportion="-12.461538">
+            <state line="22" column="3" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SessionManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="86" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Company.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="3" selection-start="518" selection-end="569" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="8" selection-start="8" selection-end="35" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,22 +178,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java" />
-        <option value="$PROJECT_DIR$/web/css/carbon.css" />
-        <option value="$PROJECT_DIR$/web/css/default.css" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/main/login.jsp" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/BiBMain.java" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/Permission.java" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
-        <option value="$PROJECT_DIR$/web/main/views/reports.jsp" />
-        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java" />
-        <option value="$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp" />
-        <option value="$PROJECT_DIR$/web/main/landingarea.jsp" />
-        <option value="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
         <option value="$PROJECT_DIR$/web/main/views/report-navigation.jsp" />
         <option value="$PROJECT_DIR$/web/main/css/default.css" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp" />
+        <option value="$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp" />
+        <option value="$PROJECT_DIR$/web/main/views/upload.partial.jsp" />
+        <option value="$PROJECT_DIR$/web/main/controllers/landingarea.js" />
+        <option value="$PROJECT_DIR$/web/main/controllers/upload.js" />
+        <option value="$PROJECT_DIR$/web/main/upload.jsp" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJob.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedUploadJob.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java" />
+        <option value="$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java" />
       </list>
     </option>
   </component>
@@ -214,51 +232,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Default" />
-        <subPane subId="Problems">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="business-intelligence-in-a-box">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/intellibps/bib/servlets">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -350,28 +323,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business-intelligence-in-a-box" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -487,6 +438,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controlpanel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -506,10 +479,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,6 +543,143 @@
               <option name="myItemId" value="bib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="customer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="business-intelligence-in-a-box" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Default" />
+        <subPane subId="Problems">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="business-intelligence-in-a-box">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/intellibps/bib/servlets">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -581,7 +687,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="preferences.sourceCode.General" />
@@ -821,18 +927,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39381003" sideWeight="0.5046575" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24986301" sideWeight="0.50053364" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16542156" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19813903" sideWeight="0.565635" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19759168" sideWeight="0.47491995" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19813903" sideWeight="0.46638206" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19759168" sideWeight="0.470651" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329863" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19813903" sideWeight="0.5261473" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19726028" sideWeight="0.5176094" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3065134" sideWeight="0.83457845" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32870865" sideWeight="0.4980822" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16542156" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -902,121 +1008,93 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/css/default.css">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/Uploaded.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="494" selection-end="685" vertical-scroll-proportion="0.33296704">
-          <folding />
-        </state>
+        <state line="34" column="62" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/controlpanel/controlpanel.jsp">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedUploadJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="49" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.65124154">
-          <folding>
-            <element signature="tag#div#1;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#2;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-            <element signature="tag#div#3;tag#div#0;tag#div#0;tag#body#0;tag#html#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="18" column="28" selection-start="478" selection-end="493" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Permission.java">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/Upload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="21" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="57" column="59" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/jobs/QueuedJobManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="29" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/persistence/PersistenceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/ReportDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="130" selection-start="1774" selection-end="1888" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/rest/SimpleDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="13" selection-start="858" selection-end="858" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Credentials.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/servlets/BiBMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="611" selection-end="711" vertical-scroll-proportion="0.21428572">
-          <folding />
-        </state>
+        <state line="22" column="3" selection-start="561" selection-end="561" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/SessionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="51" selection-start="5834" selection-end="5834" vertical-scroll-proportion="0.8021978">
-          <folding />
-        </state>
+        <state line="76" column="86" selection-start="2947" selection-end="2947" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/PermissionManager.java">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/customer/Company.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="55" selection-start="226" selection-end="226" vertical-scroll-proportion="0.14835165">
-          <folding />
-        </state>
+        <state line="22" column="3" selection-start="518" selection-end="569" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/Role.java">
+    <entry file="file://$PROJECT_DIR$/src/com/intellibps/bib/security/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="34" selection-start="454" selection-end="682" vertical-scroll-proportion="0.42857143">
-          <folding />
-        </state>
+        <state line="0" column="8" selection-start="8" selection-end="35" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/controllers/login.js">
+    <entry file="file://$PROJECT_DIR$/web/main/upload.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="167" selection-end="259" vertical-scroll-proportion="0.0">
+        <state line="20" column="73" selection-start="661" selection-end="661" vertical-scroll-proportion="-12.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/directives/jquery-ui.js">
+    <entry file="file://$PROJECT_DIR$/web/controlpanel/views/confirmation-dialog.partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/login.jsp">
+    <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.partial.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="39" selection-start="1010" selection-end="1025" vertical-scroll-proportion="-17.541666">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/css/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="13" selection-start="1638" selection-end="1638" vertical-scroll-proportion="-12.461538">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/main/landingarea.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="6" selection-start="1121" selection-end="1189" vertical-scroll-proportion="-20.625">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/views/report-navigation.jsp">
+    <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.partial.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="44" selection-start="362" selection-end="362" vertical-scroll-proportion="-8.125">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/views/landing-area-navigation.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="755" selection-end="811" vertical-scroll-proportion="-13.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/main/controllers/landingarea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="36" selection-start="467" selection-end="467" vertical-scroll-proportion="0.1978022">
-          <folding>
-            <element signature="e#0#157#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1098,7 +1176,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jasypt</last-edited>
+          <last-edited>apache poi</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

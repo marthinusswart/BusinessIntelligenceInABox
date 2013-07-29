@@ -13,6 +13,8 @@
           <element id="library" level="project" name="RestEasy" />
           <element id="library" level="project" name="Gson" />
           <element id="library" level="project" name="jasypt" />
+          <element id="library" level="project" name="dom4j" />
+          <element id="library" level="project" name="apache poi" />
         </element>
       </element>
     </root>

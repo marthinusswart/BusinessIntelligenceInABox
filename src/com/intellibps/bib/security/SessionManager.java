@@ -81,6 +81,8 @@ public class SessionManager
                     credentials.email(user.email());
                     credentials.loginTime(new Date(System.currentTimeMillis()));
                     credentials.username(user.firstname());
+                    credentials.companyId(user.company());
+                    credentials.userId(user.id());
 
                     result = nextSessionId();
 

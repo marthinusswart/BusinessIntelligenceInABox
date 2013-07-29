@@ -35,6 +35,8 @@
     <orderEntry type="library" name="RestEasy" level="project" />
     <orderEntry type="library" name="Gson" level="project" />
     <orderEntry type="library" name="jasypt" level="project" />
+    <orderEntry type="library" name="dom4j" level="project" />
+    <orderEntry type="library" name="apache poi" level="project" />
   </component>
 </module>
 
