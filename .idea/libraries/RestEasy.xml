@@ -1,15 +1,15 @@
 <component name="libraryTable">
   <library name="RestEasy">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/jackson-core-asl-1.9.9.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/jackson-mapper-asl-1.9.9.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/jackson-jaxrs-1.9.9.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/jackson-xc-1.9.9.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/jaxrs-api-2.3.6.Final.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/resteasy-jaxrs-2.3.6.Final.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/resteasy-jackson-provider-2.3.6.Final.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/javassist-3.8.0.GA.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/resteasy-jaxrs-2.3.6.Final/lib/scannotation-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/jackson-core-asl-1.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/jackson-jaxrs-1.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/jackson-mapper-asl-1.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/jackson-xc-1.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/javassist-3.8.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/jaxrs-api-2.3.6.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/resteasy-jackson-provider-2.3.6.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/resteasy-jaxrs-2.3.6.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resteasy-jaxrs-2.3.6.Final/lib/scannotation-1.0.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

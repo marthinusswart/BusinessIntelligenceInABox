@@ -16,10 +16,569 @@
             <file path="$MODULE_DIR$/src" />
           </files-to-enhance>
           <run-enhancer-on-make>true</run-enhancer-on-make>
-          <sdk-home-path>$USER_HOME$/Downloads/appengine-java-sdk-1.8.1</sdk-home-path>
+          <sdk-home-path>$MODULE_DIR$/lib/appengine-java-sdk-1.8.1</sdk-home-path>
           <email>marthinus.swart@intellibps.com</email>
         </configuration>
       </facet>
+    </facet>
+    <facet type="gwt" name="GWT">
+      <configuration>
+        <setting name="compilerMaxHeapSize" value="128" />
+        <setting name="gwtScriptOutputStyle" value="DETAILED" />
+        <setting name="gwtSdkUrl" value="file://" />
+      </configuration>
+    </facet>
+    <facet type="jpa" name="JPA">
+      <configuration>
+        <setting name="validation-enabled" value="true" />
+        <setting name="provider-name" value="" />
+        <datasource-mapping>
+          <factory-entry name="storedb" />
+        </datasource-mapping>
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex11_1/src/main/resources/META-INF/persistence.xml" />
+      </configuration>
+    </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex09_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex09_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web3">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web4">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/taskengine/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/taskengine/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web5">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/resteasy-springMVC/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/resteasy-springMVC/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web6">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/mandelbrot/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/mandelbrot/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web7">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex06_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex06_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web8">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex09_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex09_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web9">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex08_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex08_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web10">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/jdoexamples/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/jdoexamples/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web11">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex11_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex11_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web12">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/digital-signatures/use-dns/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/digital-signatures/use-dns/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web13">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex05_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex05_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web14">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex03_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex03_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web15">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/taskqueueexamples/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/taskqueueexamples/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web16">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloorm2/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloorm2/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web17">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex09_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex09_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web18">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/mediastore/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/mediastore/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web19">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex06_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex06_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web20">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex05_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex05_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web21">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/ejb-integration/war/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/ejb-integration/war/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web22">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex06_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex06_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web23">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web24">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex09_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex09_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web25">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex11_1/war/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex11_1/war/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web26">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloorm/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloorm/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web27">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/services/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/services/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web28">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex06_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex06_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web29">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex03_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex03_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web30">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex08_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex08_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web31">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/async-job-service/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/async-job-service/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web32">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/jaxb-json/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/jaxb-json/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web33">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web34">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloservers/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloservers/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web35">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex05_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex05_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web36">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/sticky/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/sticky/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web37">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/smime/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/smime/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web38">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex10_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex10_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web39">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex08_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex08_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web40">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex07_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex07_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web41">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/new_project_template/src/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/new_project_template/src" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web42">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/shardedcounter/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/shardedcounter/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web43">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_3/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex04_3/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web44">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex08_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex08_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web45">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/guice-hello/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/guice-hello/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web46">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_2/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_2/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web47">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex11_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex11_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web48">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex10_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex10_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web49">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex07_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex07_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web50">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/digital-signatures/no-dns/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/digital-signatures/no-dns/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web51">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/guestbook/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/guestbook/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web52">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloxmpp/war/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/appengine-java-sdk-1.8.1/demos/helloxmpp/war" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web53">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex05_1/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook-as7/ex05_1/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="web" name="Web54">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_3/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex04_3/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset1" name="Xml Application Context" removed="false">
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/persistence/src/test/resources/test-config.xml</file>
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/services/src/main/webapp/WEB-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/persistence/src/main/resources/persistence-config.xml</file>
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/spring-hibernate/persistence/src/main/resources/dao-config.xml</file>
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/oreilly-workbook/ex11_2/src/main/resources/META-INF/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/lib/resteasy-jaxrs-2.3.6.Final/examples/resteasy-springMVC/src/main/resources/springmvc-servlet.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
