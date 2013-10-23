@@ -3,6 +3,7 @@ package com.intellibps.bib.servlets;
 import com.google.appengine.api.blobstore.BlobKey;
 import com.google.appengine.api.blobstore.BlobstoreService;
 import com.google.appengine.api.blobstore.BlobstoreServiceFactory;
+import com.google.appengine.api.blobstore.FileInfo;
 import com.intellibps.bib.jobs.QueuedJobManager;
 import com.intellibps.bib.jobs.QueuedUploadJob;
 import com.intellibps.bib.security.Credentials;
@@ -44,15 +45,18 @@ public class Upload extends HttpServlet
             Credentials credentials = sessionManager.credentials(webHelper.getSessionId(request.getCookies()));
 
             Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
+            Map<String, List<FileInfo>> mapFileInfos =  blobstoreService.getFileInfos(request);
             List<BlobKey> blobKeys = blobs.get("companyFile");
+            List<FileInfo> fileInfos = mapFileInfos.get("companyFile");
             BlobKey blobKey = blobKeys.get(0);
-
+            FileInfo fileInfo = fileInfos.get(0);
 
             QueuedUploadJob queuedUploadJob = new QueuedUploadJob();
             queuedUploadJob.company(credentials.companyId());
             queuedUploadJob.user(credentials.userId());
             queuedUploadJob.fileBlobKey( blobKey.getKeyString());
             queuedUploadJob.queuedDate(new Date());
+            queuedUploadJob.size(fileInfo.getSize());
             queuedJobManager.addUploadJob(queuedUploadJob);
 
             response.sendRedirect("/main");

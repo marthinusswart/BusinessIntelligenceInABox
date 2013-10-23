@@ -1,0 +1,38 @@
+<div class="rounded-border normal-margin md-top-area">
+    <div id="listbox-div"
+            style="position:absolute;left: 5px;width: 200px;" class="normal-margin">
+        <h3>Report Data Type</h3>
+        <select id="data-list" ng-model="reportDataType.activeType"
+                ng-options="obj.name for obj in reportDataTypes"
+                class="combobox styled">
+        </select>
+        <div id="actions" class="styled" style="position:absolute;left: 215px; top:12px; width: 100px;">
+
+            <div id="load-type" class="fill text-left" ng-click="loadReportDataTypeData()">Load Data</div>
+        </div>
+
+    </div>
+
+
+</div>
+
+        <div class="rounded-border normal-margin md-data-grid">
+        <div class="rounded-border normal-margin md-data-grid-item"
+             ng-repeat="reportDataTypeDataItem in reportDataTypeData">
+
+            <div class="normal-margin md-data-item-left-area" style="background-color: blue;">
+                <div class="normal-margin">
+                    Processed on {{ reportDataTypeDataItem.processedDate }}
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+        </div>
+
+<initialise comment="Initialise all the different controls that need the DOM to be available first">
+    <jq-button button-id="load-type"></jq-button>
+</initialise>

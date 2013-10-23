@@ -18,25 +18,27 @@
     <link rel="stylesheet" href="/css/ui-lightness/jquery-ui.css"
           type="text/css">
     <link rel="stylesheet" href="/main/css/default.css" type="text/css">
+    <link rel="stylesheet" href="/main/css/manage-data.css" type="text/css">
     <link rel="stylesheet" href="/css/carbon.css" type="text/css">
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>
     <script type="text/javascript" src="/main/controllers/landingarea.js"></script>
+    <script type="text/javascript" src="/main/models/reportdatatype.js"></script>
 
 
     <title>Business Intelligence in a Box</title>
 </head>
 <body class="background-style">
 
-
-<h1>Business Intelligence in a Box</h1>
-
 <div class="container ui-corner-all" ng-controller="landingAreaController">
-    Reports: {{reports}}
-    <!--
-    <div class="left-area" ng-include src="navigation.url">
 
-  </div>
-  -->
+
+    <div class="navigation-area" ng-include src="navigationPanel.url"> </div>
+    <div id="mainPanel" name="mainPanel" class="main-area" ng-include src="activeContent.url">
+
+    </div>
+
+
+
 </div>
 
 <initialise comment="Initialise all the different controls that need the DOM to be available first">

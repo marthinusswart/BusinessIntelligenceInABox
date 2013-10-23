@@ -2,10 +2,7 @@ package com.intellibps.bib.jobs;
 
 import com.google.appengine.api.datastore.Key;
 
-import javax.jdo.annotations.IdGeneratorStrategy;
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.Persistent;
-import javax.jdo.annotations.PrimaryKey;
+import javax.jdo.annotations.*;
 import java.util.Date;
 
 /**
@@ -27,6 +24,8 @@ public class QueuedUploadJob
     private Date queuedDate;
     @Persistent
     private Date processedDate;
+    @Persistent
+    private Long size;
     @Persistent
     private com.google.appengine.api.datastore.Key company;
     @Persistent
@@ -90,5 +89,13 @@ public class QueuedUploadJob
     public void user(Key user)
     {
         this.user = user;
+    }
+
+    public long size() {
+        return size;
+    }
+
+    public void size(long size) {
+        this.size = size;
     }
 }
