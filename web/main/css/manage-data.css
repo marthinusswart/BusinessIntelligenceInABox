@@ -14,7 +14,7 @@ div.md-top-area {
     left: 1px;
 }
 
-div.data-types{
+div.data-types {
     position: absolute;
     right: 1px;
     top: 1px;
@@ -22,26 +22,97 @@ div.data-types{
     left: 1px;
 }
 
-div.md-data-grid{
+div.md-data-grid {
     position: absolute;
     right: 1px;
-    top: 55px;
+    left: 1px;
+    top: 40px;
     min-height: 200px;
-    bottom: 5px;
-    left: 1px;
+    bottom: 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-div.md-data-grid-item{
-
-    height: 50px;
-
-}
-
-div.md-data-item-left-area{
+div.md-data-detail {
     position: absolute;
     right: 1px;
-    top: 1px;
-    min-height: 10px;
+    left: 1px;
+    top: 40px;
+    min-height: 200px;
     bottom: 1px;
-    width: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+div.md-data-grid-item {
+    height: 50px;
+    margin: 0px 0px 5px 0px;
+    font: 12px Arial, Helvetica, sans-serif;
+    position: relative;
+
+}
+
+div.md-hover-data-grid-item {
+
+    height: 50px;
+    background-color: #a9a9a9;
+    color: #ffffff;
+    font: 12px Arial, Helvetica, sans-serif;
+    margin: 0px 0px 5px 0px;
+    position: relative;
+
+}
+
+div.md-selected-data-grid-item {
+
+    height: 50px;
+    background-color: #b0c4de;
+    color: #ffffff;
+    font: 12px Arial, Helvetica, sans-serif;
+    margin: 0px 0px 5px 0px;
+    position: relative;
+
+}
+
+div.md-data-item-left-area {
+    position: relative;
+    width: 250px;
+    height: 40px;
+}
+
+div.md-data-item-right-area {
+    position: absolute;
+    left: 260px;
+    top: 0px;
+    height: 40px;
+    right: 0px;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+div.manage-data-tabs {
+    position: absolute;
+    top: 60px;
+    bottom: 10px;
+    left: 5px;
+    right: 1px;
+    margin: 1px;
+}
+
+.gridStyle {
+    position: relative;
+    border: 1px solid rgb(212, 212, 212);
+    height: 100%;
+    width: 100%;
+}
+
+div.md-detail-grid {
+    position: absolute;
+    margin: 5px;
+    bottom: 5px;
+    top: 5px;
+    right: 1px;
+    left: 1px;
+
 }

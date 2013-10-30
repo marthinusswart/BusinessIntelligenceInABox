@@ -33,7 +33,7 @@ public class GenericDataService
 
     @GET
     @Path("company_datatypes/{param}")
-    public Response loadCompanyDataTypes(@PathParam("param")  String sessionId) throws IllegalAccessException
+    public Response loadCompanyDataTypes(@PathParam("param") String sessionId) throws IllegalAccessException
     {
         String result = "";
         Company company = null;
@@ -47,7 +47,7 @@ public class GenericDataService
             logger.info("Loading company types for company: " + company.name());
             List<GenericData> dataSet = dataManager.loadGenericData(company);
 
-            Iterator<GenericData> dataIterator = dataSet.iterator()  ;
+            Iterator<GenericData> dataIterator = dataSet.iterator();
 
             while (dataIterator.hasNext())
             {
@@ -56,7 +56,7 @@ public class GenericDataService
 
             }
 
-      Gson gson = new Gson();
+            Gson gson = new Gson();
             result = gson.toJson(dataTypeMap.values());
             logger.info("The JSON of datatypes: " + result);
             dataManager.close();
@@ -71,7 +71,7 @@ public class GenericDataService
 
     @GET
     @Path("company_datatypedata/{param}")
-    public Response loadCompanyDataTypes(@PathParam("param")  String reportDataType, @QueryParam("sessionid") String sessionId) throws IllegalAccessException
+    public Response loadCompanyDataTypes(@PathParam("param") String reportDataType, @QueryParam("sessionid") String sessionId) throws IllegalAccessException
     {
         String result = "";
         Company company = null;
@@ -84,17 +84,44 @@ public class GenericDataService
             List<GenericData> dataSet = dataManager.loadGenericData(company, reportDataType);
             Vector<GenericData> strippedData = new Vector<GenericData>();
 
-            Iterator<GenericData> dataIterator = dataSet.iterator()  ;
+            Iterator<GenericData> dataIterator = dataSet.iterator();
 
             while (dataIterator.hasNext())
             {
-               GenericData data = dataIterator.next();
-               strippedData.add(data.clone(true));
+                GenericData data = dataIterator.next();
+                strippedData.add(data.clone(true));
             }
 
             Gson gson = new Gson();
             result = gson.toJson(strippedData);
             logger.info("The JSON of datatypes: " + result);
+            dataManager.close();
+        } else
+        {
+            throw new IllegalAccessException("Not logged in");
+        }
+
+        return Response.status(200).entity(result).build();
+
+    }
+
+    @GET
+    @Path("company_datatypedetail/{param}")
+    public Response loadCompanyDataTypeDetail(@PathParam("param") Long reportDataTypeId, @QueryParam("sessionid") String sessionId) throws IllegalAccessException
+    {
+        String result = "";
+        Company company = null;
+        DataManager dataManager = new DataManager();
+
+        if (sessionManager.isLoggedIn(sessionId))
+        {
+            company = dataManager.loadCompany(sessionManager.credentials(sessionId).companyId());
+            logger.info("Loading company type detail for company: " + company.name());
+            GenericData dataSet = dataManager.loadGenericData(reportDataTypeId);
+
+            //Gson gson = new Gson();
+            result = dataSet.toJson();
+            logger.info("The JSON of datatypedetail: " + result);
             dataManager.close();
         } else
         {

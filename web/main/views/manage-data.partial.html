@@ -1,38 +1,70 @@
 <div class="rounded-border normal-margin md-top-area">
     <div id="listbox-div"
-            style="position:absolute;left: 5px;width: 200px;" class="normal-margin">
+         style="position:absolute;left: 5px;width: 200px;" class="normal-margin">
         <h3>Report Data Type</h3>
         <select id="data-list" ng-model="reportDataType.activeType"
                 ng-options="obj.name for obj in reportDataTypes"
                 class="combobox styled">
         </select>
-        <div id="actions" class="styled" style="position:absolute;left: 215px; top:12px; width: 100px;">
 
-            <div id="load-type" class="fill text-left" ng-click="loadReportDataTypeData()">Load Data</div>
+        <div id="actions" class="styled" style="position:absolute;left: 215px; top:12px; width: 100px;">
+            <div style="position: relative;width: 400px;">
+                <div id="load-type" class="text-left" style="left: 0px;width: 100px;"
+                     ng-click="loadReportDataTypeData()">Load Data
+                </div>
+                <div id="load-data" class="text-left" style="position:absolute;left:110px;width: 100px;top:0px;"
+                     ng-click="loadReportDataDetail()">Load Detail
+                </div>
+            </div>
         </div>
 
     </div>
 
 
 </div>
+<div
+        id="tabs"
+        class="manage-data-tabs">
+    <ul>
+        <li><a href="#gridTab">Data Grid</a></li>
+        <li><a href="#detailTab">Data Detail</a></li>
 
-        <div class="rounded-border normal-margin md-data-grid">
-        <div class="rounded-border normal-margin md-data-grid-item"
-             ng-repeat="reportDataTypeDataItem in reportDataTypeData">
+    </ul>
 
-            <div class="normal-margin md-data-item-left-area" style="background-color: blue;">
-                <div class="normal-margin">
-                    Processed on {{ reportDataTypeDataItem.processedDate }}
-                </div>
+    <div id="gridTab" class="rounded-border md-data-grid">
+        <div
+                ng-repeat="reportDataTypeDataItem in reportDataTypeData"
+                ng-mouseover="mouseOverGridItem(reportDataTypeDataItem)"
+                ng-mouseleave="mouseLeaveGridItem(reportDataTypeDataItem)"
+                ng-class="getGridItemClass(reportDataTypeDataItem)"
+                ng-click="loadSelectedGridItem(reportDataTypeDataItem)">
+
+            <div class="normal-margin md-data-item-left-area">
+                Processed on {{ reportDataTypeDataItem.processedDate }}
+                Record Count:
+
+            </div>
+            <div class="normal-margin md-data-item-right-area">
+
+                Field names
+                <br>
+                {{ reportDataTypeDataItem.embeddedItem.formatHeadingNames() }}
+
             </div>
 
 
-
-
         </div>
 
+    </div>
+    <div id="detailTab" class="rounded-border md-data-detail">
+        <div class="md-detail-grid" style="background-color: blue;">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
         </div>
+    </div>
+</div>
 
 <initialise comment="Initialise all the different controls that need the DOM to be available first">
     <jq-button button-id="load-type"></jq-button>
+    <jq-button button-id="load-data"></jq-button>
+    <jq-tabs tabs-id="tabs" padding="5px 0px 5px 0px"></jq-tabs>
 </initialise>

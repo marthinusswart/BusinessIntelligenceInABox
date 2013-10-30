@@ -5,7 +5,6 @@
  * Time: 11:14
  * To change this template use File | Settings | File Templates.
  */
-var Company = function Company()
-{
+function Company() {
 
 }

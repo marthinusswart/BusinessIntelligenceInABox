@@ -5,7 +5,6 @@
  * Time: 08:37
  * To change this template use File | Settings | File Templates.
  */
-var ReportType = function ReportType()
-{
+function ReportType() {
 
 }

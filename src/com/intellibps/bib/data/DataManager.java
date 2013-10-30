@@ -37,7 +37,7 @@ public class DataManager
 
     public void close()
     {
-                persistenceManager.close();
+        persistenceManager.close();
     }
 
     public List<GenericData> loadGenericData(Company company, String reportDataType)
@@ -45,6 +45,23 @@ public class DataManager
         List<GenericData> dataSet = null;
         Query query = persistenceManager.newQuery("SELECT FROM com.intellibps.bib.data.GenericData where company==:company && name==:name");
         dataSet = (List<GenericData>) query.execute(company.id(), reportDataType);
+        return dataSet;
+    }
+
+    public GenericData loadGenericData(Long reportDataTypeId)
+    {
+        GenericData dataSet = null;
+        dataSet = persistenceManager.getObjectById(GenericData.class, reportDataTypeId);
+        dataSet.headings();
+        dataSet.stringValues();
+        dataSet.dateValues();
+        dataSet.numberValues();
+
+        if (dataSet.headings().get(0).headingType() == DataHeading.DATE)
+        {
+            dataSet.recordCount(dataSet.headings().get(0).dateValues().size());
+        }
+
         return dataSet;
     }
 }

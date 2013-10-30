@@ -5,8 +5,7 @@
  * Time: 15:25
  * To change this template use File | Settings | File Templates.
  */
-var User = function User()
-{
-         roles = [];
+function User() {
+    roles = [];
     fullRoles = [];
 }

@@ -5,8 +5,7 @@
  * Time: 08:37
  * To change this template use File | Settings | File Templates.
  */
-var Report = function Report()
-{
+function Report() {
     roles = [];
     fullRoles = [];
 }

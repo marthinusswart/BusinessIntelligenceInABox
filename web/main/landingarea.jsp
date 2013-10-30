@@ -14,15 +14,19 @@
     <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/js/angular-cookies.min.js"></script>
+    <script src="/js/ng-grid-2.0.7.min.js"></script>
 
     <link rel="stylesheet" href="/css/ui-lightness/jquery-ui.css"
           type="text/css">
     <link rel="stylesheet" href="/main/css/default.css" type="text/css">
     <link rel="stylesheet" href="/main/css/manage-data.css" type="text/css">
     <link rel="stylesheet" href="/css/carbon.css" type="text/css">
+    <link rel="stylesheet" href="/css/ng-grid.min.css" type="text/css">
     <script type="text/javascript" src="/directives/jquery-ui.js"></script>
+    <script type="text/javascript" src="/main/modules/bib-manage-data.js"></script>
     <script type="text/javascript" src="/main/controllers/landingarea.js"></script>
     <script type="text/javascript" src="/main/models/reportdatatype.js"></script>
+    <script type="text/javascript" src="/main/models/reportdatatypedataitem.js"></script>
 
 
     <title>Business Intelligence in a Box</title>
@@ -32,11 +36,10 @@
 <div class="container ui-corner-all" ng-controller="landingAreaController">
 
 
-    <div class="navigation-area" ng-include src="navigationPanel.url"> </div>
+    <div class="navigation-area" ng-include src="navigationPanel.url"></div>
     <div id="mainPanel" name="mainPanel" class="main-area" ng-include src="activeContent.url">
 
     </div>
-
 
 
 </div>
