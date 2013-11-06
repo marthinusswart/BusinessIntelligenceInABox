@@ -5,7 +5,23 @@
  * Time: 5:54 PM
  * To change this template use File | Settings | File Templates.
  */
-function ReportDataType() {
+function ReportDataType()
+{
+
+}
+
+function ReportDataTypeArray()
+{
+
+}
+
+function ReportDataTypeData()
+{
+
+}
+
+function ReportDataTypeDetail()
+{
 
 }
 
